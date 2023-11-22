@@ -2,7 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import MobileNav from "./MobileNav";
-import logo from "../assets/images/logo/logo.png";
+import logo from "../../assets/images/logo/logo.png";
 
 // icons
 import { FaArrowDown } from "react-icons/fa6";
@@ -14,6 +14,7 @@ const Navbar = () => {
 
   // toggle menu
   const handleOpenNav = () => setOpenNav(!openNav);
+
   // nav Links
   const navItems = [
     { id: 1, path: "/", link: "Home" },
@@ -40,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`bg-gray-400  relative `}>
+    <header className={` bg-blur fixed z-20 top-0 left-0 right-0 `}>
       <nav className=" max-w-7xl mx-auto p-5 flex items-center justify-between">
         {/* logo */}
 
@@ -89,7 +90,11 @@ const Navbar = () => {
         </div>
       </nav>
       {/* mobile devices */}
-      <MobileNav navItems={navItems} openNav={openNav} />
+      <MobileNav
+        navItems={navItems}
+        openNav={openNav}
+        setOpenNav={setOpenNav}
+      />
     </header>
   );
 };

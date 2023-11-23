@@ -20,4 +20,19 @@
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
   }
+
+  .angry-animate {
+    animation: appear 4s ease 0s infinite alternate;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale3d(1, 1, 1);
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale3d(1.5, 1.5, 1.5);
+    }
+  }
 }

@@ -19,7 +19,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-5 bg-banner min-h-screen overflow-hidden">
+    <div className="flex justify-center items-center p-5 bg-banner h-screen overflow-hidden">
       <div className=" text-center">
         <h1 className=" text-4xl leading-[3rem] md:text-5xl capitalize">
           search your one from

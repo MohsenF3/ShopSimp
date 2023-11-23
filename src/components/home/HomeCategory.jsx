@@ -1,6 +1,7 @@
 import { BsWindows } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
+// list of categories
 const categoryList = [
   {
     imgUrl: "src/assets/images/category/01.jpg",
@@ -29,6 +30,12 @@ const categoryList = [
 ];
 
 const HomeCategory = () => {
+  // Generate a unique id for each item:
+  const categoryWithId = categoryList.map((item, index) => ({
+    ...item,
+    id: index,
+  }));
+
   return (
     <div className="max-w-7xl mx-auto py-16 px-5">
       <div>
@@ -41,9 +48,9 @@ const HomeCategory = () => {
           </h3>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {categoryList.map(({ imgUrl, title }) => (
+          {categoryWithId.map(({ imgUrl, title, id }) => (
             <Link
-              key={Math.random()}
+              key={id}
               className=" relative shadow-lg hover:-translate-y-3 transition "
             >
               <img src={imgUrl} alt="" className=" brightness-75" />

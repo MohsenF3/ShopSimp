@@ -9,8 +9,17 @@
   .btn-border {
     @apply bg-transparent hover:shadow-md hover:shadow-yellow-400 border border-yellow-400  hover:bg-yellow-400 hover:text-white transition duration-100  ease-in-out  py-3 px-6 rounded-md font-medium;
   }
+  .register-form {
+  @apply block outline-none px-2 py-3 rounded-md w-full text-gray-500
+  }
   .bg-banner {
     background-image: url("./assets/images/bg-img/06.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  .bg-register {
+    background-image: url("./assets/images/bg-img/07.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;

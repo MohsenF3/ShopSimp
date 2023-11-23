@@ -10,8 +10,56 @@
     @apply bg-transparent hover:shadow-md hover:shadow-yellow-400 border border-yellow-400  hover:bg-yellow-400 hover:text-white transition duration-100  ease-in-out  py-3 px-6 rounded-md font-medium;
   }
   .register-form {
-  @apply block outline-none px-2 py-3 rounded-md w-full text-gray-500
+    @apply block outline-none px-2 py-3 rounded-md w-full text-gray-500;
   }
+
+  .first-thumb {
+    @apply absolute w-6 h-6 rounded-full  bg-red-100 hover:before:hidden before:inset-1 before:bg-red-300 before:absolute before:rounded-full;
+  }
+  .second-thumb {
+    @apply hidden relative group-hover:grid place-items-center;
+  }
+  .second-thumb-animate {
+    @apply absolute bg-red-100 w-9 h-9 rounded-full -z-10 animate-ping;
+  }
+  .popup {
+    @apply bg-white text-gray-800 font-medium rounded-sm w-32 h-12 shadow-md border-2  transition-opacity duration-300 opacity-0 group-hover:opacity-100  grid  place-items-center border-yellow-400 absolute -top-16 -left-20;
+  }
+
+  .first-thumb:first-child {
+    @apply top-[20%] left-[2%];
+  }
+  .first-thumb:nth-child(2) {
+    @apply top-[10%] left-[35%] bg-blue-100 before:bg-blue-300;
+  }
+  .first-thumb:nth-child(2) .second-thumb-animate {
+    @apply bg-blue-100;
+  }
+  .first-thumb:nth-child(3) {
+    @apply top-[70%] left-[29%] bg-green-100 before:bg-green-300;
+  }
+  .first-thumb:nth-child(3) .second-thumb-animate {
+    @apply bg-green-100;
+  }
+  .first-thumb:nth-child(4) {
+    @apply top-[48%] left-[50%] bg-yellow-100 before:bg-yellow-300;
+  }
+  .first-thumb:nth-child(4) .second-thumb-animate {
+    @apply bg-yellow-100;
+  }
+  .first-thumb:nth-child(5) {
+    @apply top-[30%] left-[70%] bg-purple-100 before:bg-purple-300;
+  }
+  .first-thumb:nth-child(5) .second-thumb-animate {
+    @apply bg-purple-100;
+  }
+  .first-thumb:nth-child(6) {
+    @apply top-[76%] left-[83%] bg-orange-100 before:bg-orange-300;
+  }
+  .first-thumb:nth-child(6) .second-thumb-animate {
+    @apply bg-orange-100;
+  }
+
   .bg-banner {
     background-image: url("./assets/images/bg-img/06.jpg");
     background-size: cover;

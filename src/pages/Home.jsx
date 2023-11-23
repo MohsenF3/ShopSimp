@@ -1,6 +1,7 @@
 import Banner from "../components/home/Banner";
 import CategoryShownCase from "../components/home/CategoryShownCase";
 import HomeCategory from "../components/home/HomeCategory";
+import LocationSprade from "../components/home/LocationSprade";
 import Register from "../components/home/Register";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <HomeCategory />
       <CategoryShownCase />
       <Register />
+      <LocationSprade />
     </div>
   );
 };

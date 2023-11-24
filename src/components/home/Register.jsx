@@ -6,7 +6,7 @@ const Register = () => {
           <h6 className="text-yellow-400 text-lg tracking-widest font-medium">
             save the day
           </h6>
-          <h2 className="text-3xl max-w-lg text-white my-4 leading-[3rem] font-bold">
+          <h2 className="text-3xl max-sm:text-2xl max-w-lg text-white my-4 leading-[3rem] font-bold">
             join on day long free workshop for advance
             <span className="text-yellow-400">mastering</span> on sales
           </h2>

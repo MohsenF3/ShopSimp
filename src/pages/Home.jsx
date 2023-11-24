@@ -5,6 +5,7 @@ import Register from "../components/home/Register";
 import LocationSprade from "../components/home/LocationSprade";
 import AboutUs from "../components/home/AboutUs";
 import AppSection from "../components/home/AppSection";
+import Sponsor from "../components/home/Sponsor";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <LocationSprade />
       <AboutUs />
       <AppSection />
+      <Sponsor />
     </div>
   );
 };

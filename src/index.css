@@ -12,7 +12,6 @@
   .register-form {
     @apply block outline-none px-2 py-3 rounded-md w-full text-gray-500;
   }
-
   .first-thumb {
     @apply absolute w-6 h-6 rounded-full  bg-red-100 hover:before:hidden before:inset-1 before:bg-red-300 before:absolute before:rounded-full;
   }
@@ -58,6 +57,15 @@
   }
   .first-thumb:nth-child(6) .second-thumb-animate {
     @apply bg-orange-100;
+  }
+
+  .bg-gradi {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(250, 204, 21) 50%
+    );
   }
 
   .bg-banner {

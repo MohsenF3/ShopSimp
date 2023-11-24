@@ -4,6 +4,7 @@ import HomeCategory from "../components/home/HomeCategory";
 import Register from "../components/home/Register";
 import LocationSprade from "../components/home/LocationSprade";
 import AboutUs from "../components/home/AboutUs";
+import AppSection from "../components/home/AppSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Register />
       <LocationSprade />
       <AboutUs />
+      <AppSection />
     </div>
   );
 };

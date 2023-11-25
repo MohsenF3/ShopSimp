@@ -1,14 +1,14 @@
-import { useRef } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 import img from "../../assets/images/instructor/01.png";
 
-// icons
+//icons
 import { FaUsers } from "react-icons/fa";
 import { FaUserGraduate } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 
+// data
 const countList = [
   {
     id: 0,
@@ -32,6 +32,7 @@ const countList = [
     backgroundColor: "#fdc500",
   },
 ];
+//
 
 const AboutUs = () => {
   const [ref, inView] = useInView({

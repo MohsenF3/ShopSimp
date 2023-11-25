@@ -1,40 +1,8 @@
-const sponsorList = [
-  {
-    id: 0,
-    imgUrl: "/src/assets/images/sponsor/01.png",
-  },
-  {
-    id: 1,
-
-    imgUrl: "/src/assets/images/sponsor/02.png",
-  },
-  {
-    id: 2,
-
-    imgUrl: "/src/assets/images/sponsor/03.png",
-  },
-  {
-    id: 3,
-
-    imgUrl: "/src/assets/images/sponsor/04.png",
-  },
-  {
-    id: 4,
-
-    imgUrl: "/src/assets/images/sponsor/05.png",
-  },
-  {
-    id: 5,
-
-    imgUrl: "/src/assets/images/sponsor/06.png",
-  },
-];
+import { sponsorList } from "./index";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 // import required modules
 import { Autoplay } from "swiper/modules";
 

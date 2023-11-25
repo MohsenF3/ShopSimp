@@ -86,8 +86,19 @@
     backdrop-filter: blur(24px);
   }
 
+  .footer-title {
+    @apply text-xl font-medium text-white mb-3;
+  }
+
   .angry-animate {
     animation: appear 4s ease 0s infinite alternate;
+  }
+
+  .page-header {
+    background-image: url("./assets/images/pageheader/bg/01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   @keyframes appear {

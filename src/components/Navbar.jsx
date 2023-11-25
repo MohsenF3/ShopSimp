@@ -2,7 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import MobileNav from "./MobileNav";
-import logo from "../../assets/images/logo/logo.png";
+import logo from "../assets/images/logo/logo.png";
 
 // icons
 import { FaArrowDown } from "react-icons/fa6";

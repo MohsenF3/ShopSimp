@@ -1,41 +1,10 @@
-import { BsWindows } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-// list of categories
-const categoryList = [
-  {
-    imgUrl: "src/assets/images/category/01.jpg",
-    title: "DSLR Camera",
-  },
-  {
-    imgUrl: "src/assets/images/category/02.jpg",
-    title: "Shoes",
-  },
-  {
-    imgUrl: "src/assets/images/category/03.jpg",
-    title: "Photography",
-  },
-  {
-    imgUrl: "src/assets/images/category/04.jpg",
-    title: "Formal Dress",
-  },
-  {
-    imgUrl: "src/assets/images/category/05.jpg",
-    title: "Colorful Bags",
-  },
-  {
-    imgUrl: "src/assets/images/category/06.jpg",
-    title: "Home Decor",
-  },
-];
+import { categoryList } from "./index";
+
+import { BsWindows } from "react-icons/bs";
 
 const HomeCategory = () => {
-  // Generate a unique id for each item:
-  const categoryWithId = categoryList.map((item, index) => ({
-    ...item,
-    id: index,
-  }));
-
   return (
     <div className="max-w-7xl mx-auto py-16 px-5">
       <div>
@@ -48,7 +17,7 @@ const HomeCategory = () => {
           </h3>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {categoryWithId.map(({ imgUrl, title, id }) => (
+          {categoryList.map(({ imgUrl, title, id }) => (
             <Link
               key={id}
               className=" relative shadow-lg hover:-translate-y-3 transition "

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import allProducts from "../products.json";
 
 import PageHeader from "../components/PageHeader";
-import Form from "../components/singleProduct/Form";
+import AddToCartForm from "../components/singleProduct/AddToCartForm";
 import PopularPost from "../components/shop/PopularPost";
 import Tags from "../components/shop/Tags";
 import Reviews from "../components/singleProduct/Reviews";
@@ -57,7 +57,7 @@ const SingleProductPage = () => {
               </p>
 
               {/* add to cart section */}
-              <Form id={id} name={name} price={price} img={img} />
+              <AddToCartForm id={id} name={name} price={price} img={img} />
             </div>
           </div>
 

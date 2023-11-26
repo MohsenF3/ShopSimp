@@ -35,7 +35,7 @@ const ShopCards = ({ data, listStyle }) => {
                   <Link to="/" className="p-3 bg-red-400 rounded-full">
                     <FaHeart />
                   </Link>
-                  <Link className="p-3 bg-red-400 rounded-full">
+                  <Link to="/cart-page" className="p-3 bg-red-400 rounded-full">
                     <MdShoppingCart />
                   </Link>
                 </div>

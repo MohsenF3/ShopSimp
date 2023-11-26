@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 import Input from "../Input";
 
-const Form = ({ id, name, price, img }) => {
+const AddToCartForm = ({ id, name, price, img }) => {
   const formik = useFormik({
     initialValues: {
       id,
@@ -89,27 +89,27 @@ const Form = ({ id, name, price, img }) => {
         </select>
         {/* quantity */}
         <div>
-          <div className="flex flex-row h-11 w-1/2 mx-auto rounded-lg relative bg-transparent">
+          <div className="flex flex-row h-11 w-1/2 mx-auto ">
             <button
               type="button"
               onClick={handleDecrement}
-              className=" bg-gray-300 border-r text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+              className=" bg-gray-300 border-r text-gray-600  hover:bg-gray-400  w-20 rounded-l"
             >
-              <span className="text-2xl font-thin">−</span>
+              −
             </button>
             <input
               value={formik.values.quantity}
               onChange={formik.handleChange}
               type="number"
               id="number"
-              className=" focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
-            ></input>
+              className=" text-center w-full bg-gray-300 font-semibold text-md  text-gray-700 outline-none"
+            />
             <button
               type="button"
               onClick={handleIncrement}
-              className="bg-gray-300 border-l text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+              className="bg-gray-300 border-l text-gray-600  hover:bg-gray-400  w-20 rounded-r"
             >
-              <span className="text-2xl font-thin ">+</span>
+              +
             </button>
           </div>
         </div>
@@ -142,4 +142,4 @@ const Form = ({ id, name, price, img }) => {
   );
 };
 
-export default Form;
+export default AddToCartForm;

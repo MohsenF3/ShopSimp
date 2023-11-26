@@ -64,47 +64,44 @@ const Shop = () => {
       {/* main content */}
       <div className="max-w-7xl mx-auto px-5 my-10 grid grid-cols-3 gap-10">
         {/* left side  */}
-        {loading ? (
-          <Loading />
-        ) : (
-          <article className="col-span-2">
-            {/* header */}
-            <div className="flex items-center justify-between mb-10">
-              <h3 className="font-medium text-lg tracking-wide">
-                Showing {indexOfFirstPro}-
-                {currentPage === totalPage ? data.length : indexOfLastPro} of{" "}
-                {data.length} Results
-              </h3>
-              {/* grid and list btn */}
-              <div>
-                <button
-                  className={`mr-5 ${!listStyle && "text-orange-500"}`}
-                  onClick={() => setListStyle(false)}
-                >
-                  <TfiLayoutGrid2 />
-                </button>
-                <button
-                  className={`mr-5 ${listStyle && "text-orange-500"}`}
-                  onClick={() => setListStyle(true)}
-                >
-                  <FaList />
-                </button>
-              </div>
-            </div>
-            {/* cards */}
+        <article className="col-span-2">
+          {/* header */}
+          <div className="flex items-center justify-between mb-10">
+            <h3 className="font-medium text-lg tracking-wide">
+              Showing {indexOfFirstPro}-
+              {currentPage === totalPage ? data.length : indexOfLastPro} of{" "}
+              {data.length} Results
+            </h3>
+            {/* grid and list btn */}
             <div>
-              <ShopCards data={currentProducts} listStyle={listStyle} />
+              <button
+                className={`mr-5 ${!listStyle && "text-orange-500"}`}
+                onClick={() => setListStyle(false)}
+              >
+                <TfiLayoutGrid2 />
+              </button>
+              <button
+                className={`mr-5 ${listStyle && "text-orange-500"}`}
+                onClick={() => setListStyle(true)}
+              >
+                <FaList />
+              </button>
             </div>
-            {/* pagination */}
-            <div>
-              <Pagination
-                currentPage={currentPage}
-                onPageChange={handlePageChange}
-                totalPage={totalPage}
-              />
-            </div>
-          </article>
-        )}
+          </div>
+          {/* cards */}
+          <div>
+            <ShopCards data={currentProducts} listStyle={listStyle} />
+          </div>
+          {/* pagination */}
+          <div>
+            <Pagination
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+              totalPage={totalPage}
+            />
+          </div>
+        </article>
+
         {/* right side */}
         <div className="p-2">
           {/* search bar */}

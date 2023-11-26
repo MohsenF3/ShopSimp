@@ -58,8 +58,6 @@ const Shop = () => {
     setCurrentPage(1);
   };
 
-  console.log(selectedCategory);
-
   return (
     <div>
       <PageHeader title={"Shop Page"} curPage={"Shop"} />

@@ -50,16 +50,4 @@ export const tagsList = [
     link: "#",
     text: "3docean",
   },
-  {
-    link: "#",
-    text: "envato",
-  },
-  {
-    link: "#",
-    text: "themeforest",
-  },
-  {
-    link: "#",
-    text: "codecanyon",
-  },
 ];

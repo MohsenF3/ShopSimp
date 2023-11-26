@@ -3,7 +3,7 @@ import { postList } from "./index";
 
 const PopularPost = () => {
   return (
-    <div className="my-8">
+    <div className="mb-8">
       <h3 className="text-xl font-bold mb-5">Most Popular Post</h3>
       <div>
         {postList.map(({ id, imgUrl, title, date }) => (

@@ -3,7 +3,7 @@ import data from "../../products.json";
 const ShopCategory = (props) => {
   const { onChangeCategory, allCategories, selectedCategory, setData } = props;
   return (
-    <div>
+    <div className="mb-8">
       <h3 className="text-xl font-bold mb-2">All Categories</h3>
       <div>
         <button

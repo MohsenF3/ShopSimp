@@ -1,5 +1,6 @@
-import blogList from "../utilis/blogdata";
+import { Link } from "react-router-dom";
 
+import blogList from "../utilis/blogdata";
 import PageHeader from "../components/PageHeader";
 
 // icons
@@ -7,7 +8,6 @@ import { FaUser } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 import { BsFillSendFill } from "react-icons/bs";
 import { BsFillChatLeftTextFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
 const Blog = () => {
   return (
@@ -18,7 +18,7 @@ const Blog = () => {
 
       <div className=" max-w-7xl mx-auto px-5 py-20">
         <div className="grid grid-cols-3 gap-7">
-          {blogList.map(({ id, imgUrl, title, desc, btnText }) => (
+          {blogList.map(({ id, imgUrl, title, desc }) => (
             <Link
               to={`/blog/${id}`}
               key={id}

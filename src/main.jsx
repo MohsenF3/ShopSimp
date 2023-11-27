@@ -9,6 +9,7 @@ import Shop from "./pages/Shop.jsx";
 import SingleProductPage from "./pages/SingleProductPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import Blog from "./pages/Blog.jsx";
+import SingleBlogPage from "./pages/SingleBlogPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/blog/:id",
+        element: <SingleBlogPage />,
       },
       {
         path: "/shop/:id",

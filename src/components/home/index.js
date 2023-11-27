@@ -1,6 +1,3 @@
-// About us
-
-
 // categoryshowncase
 export const ProductData = [
   {

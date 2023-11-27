@@ -11,6 +11,7 @@ import CartPage from "./pages/CartPage.jsx";
 import Blog from "./pages/Blog.jsx";
 import SingleBlogPage from "./pages/SingleBlogPage.jsx";
 import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "/blog/:id",

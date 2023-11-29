@@ -3,36 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 import img from "../../assets/images/instructor/01.png";
 
-//icons
-import { FaUsers } from "react-icons/fa";
-import { FaUserGraduate } from "react-icons/fa";
-import { IoIosNotifications } from "react-icons/io";
-
-// data
-const countList = [
-  {
-    id: 0,
-    iconName: <FaUsers />,
-    count: "12600",
-    text: "Marchant Enrolled",
-    backgroundColor: "#f77f00",
-  },
-  {
-    id: 1,
-    iconName: <FaUserGraduate />,
-    count: "30",
-    text: "Certified Courses",
-    backgroundColor: "#226f54",
-  },
-  {
-    id: 2,
-    iconName: <IoIosNotifications />,
-    count: "100",
-    text: "Rewards and GitCards",
-    backgroundColor: "#fdc500",
-  },
-];
-//
+import { countList } from "../../utilis/data";
 
 const AboutUs = () => {
   const [ref, inView] = useInView({

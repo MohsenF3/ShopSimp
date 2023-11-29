@@ -2,114 +2,13 @@ import { Link } from "react-router-dom";
 
 import SocialIcons from "./SocialIcons";
 
+import { addressList } from "../utilis/data";
+import { ItemList } from "../utilis/data";
+import { quickList } from "../utilis/data";
+import { tweetList } from "../utilis/data";
+
 // icons
 import { FaRegCopyright } from "react-icons/fa6";
-//
-import { SiGooglemaps } from "react-icons/si";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaEnvelopeOpen } from "react-icons/fa";
-//
-
-import { FaTwitter } from "react-icons/fa";
-
-const addressList = [
-  {
-    id: 0,
-    iconName: <SiGooglemaps />,
-    text: "New York, USA.",
-  },
-  {
-    id: 1,
-    iconName: <FaPhoneAlt />,
-    text: "+880 123 456 789",
-  },
-  {
-    id: 2,
-    iconName: <FaEnvelopeOpen />,
-    text: "info@shopcart.com",
-  },
-];
-
-const ItemList = [
-  {
-    text: "All Products",
-    link: "/shop",
-    id: 0,
-  },
-  {
-    text: "Shop",
-    link: "/shop",
-    id: 1,
-  },
-  {
-    text: "Blog",
-    link: "/blog",
-    id: 2,
-  },
-  {
-    text: "About",
-    link: "/about",
-    id: 3,
-  },
-  {
-    text: "Policy",
-    id: 4,
-    link: "#",
-  },
-  {
-    text: "FAQs",
-    link: "/about",
-    id: 5,
-  },
-];
-const quickList = [
-  {
-    text: "Summer Sessions",
-    link: "#",
-  },
-  {
-    text: "Events",
-    link: "#",
-  },
-  {
-    text: "Gallery",
-    link: "#",
-  },
-  {
-    text: "Forums",
-    link: "#",
-  },
-  {
-    text: "Privacy Policy",
-    link: "#",
-  },
-  {
-    text: "Terms of Use",
-    link: "#",
-  },
-];
-const tweetList = [
-  {
-    id: 0,
-    iconName: <FaTwitter />,
-    desc: (
-      <p>
-        Aminur islam <a href="#">@ShopCart Greetings! #HTML_Template</a> Grab
-        your item, 50% Big Sale Offer !!
-      </p>
-    ),
-  },
-  {
-    id: 1,
-    iconName: <FaTwitter />,
-    desc: (
-      <p>
-        Somrat islam <a href="#">@ShopCart Hey! #HTML_Template</a> Grab your
-        item, 50% Big Sale Offer !!
-      </p>
-    ),
-  },
-];
 
 const Footer = () => {
   return (

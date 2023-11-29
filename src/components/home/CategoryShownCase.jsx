@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ProductData } from "./index";
+import { ProductData } from "../../utilis/data";
 import CategoryShownCaseCard from "./CategoryShownCaseCard";
 
 // shapes

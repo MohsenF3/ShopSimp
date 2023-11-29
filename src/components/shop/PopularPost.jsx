@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { postList } from "./index";
+import { postList } from "../../utilis/data";
 
 const PopularPost = () => {
   return (

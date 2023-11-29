@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import PageHeader from "../components/PageHeader";
-import Loading from "../components/Loading";
 
 // left side
 import products from "../products.json";

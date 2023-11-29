@@ -1,4 +1,4 @@
-import { sponsorList } from "./index";
+import { sponsorList } from "../../utilis/data";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { categoryList } from "./index";
+import { categoryList } from "../../utilis/data";
 
 import { BsWindows } from "react-icons/bs";
 

@@ -1,44 +1,24 @@
 import { NavLink, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
+import { navItems } from "../utilis/data";
 import MobileNav from "./MobileNav";
 import logo from "../assets/images/logo/logo.png";
 
 // icons
 import { FaArrowDown } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa6";
+import { useAuth } from "../context/authcontext";
 
 const Navbar = () => {
+  // Accessing user information from the authentication context
+  const { user, logOut } = useAuth();
+
+  // State to manage the mobile navigation menu
   const [openNav, setOpenNav] = useState(false);
-  const [widowScrolled, setWidowScrolled] = useState(false);
 
   // toggle menu
   const handleOpenNav = () => setOpenNav(!openNav);
-
-  // nav Links
-  const navItems = [
-    { id: 1, path: "/", link: "Home" },
-    { id: 2, path: "/shop", link: "Shop" },
-    { id: 3, path: "/blog", link: "Blog" },
-    { id: 4, path: "/about", link: "About" },
-    { id: 5, path: "/contact", link: "Contact" },
-  ];
-  // when window scrolled
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setWidowScrolled(true);
-      } else {
-        setWidowScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header className={` bg-blur fixed z-20 top-0 left-0 right-0 `}>
@@ -68,18 +48,33 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Create & Connect btns*/}
-          <div>
-            <Link to="/signup" className="btn">
-              Create Account
-            </Link>
-            <Link to="/login" className=" font-medium p-3 text-gray-600">
-              Log in
-            </Link>
-          </div>
+          {/* Conditional rendering based on user authentication */}
+          {user.isAuthenticated ? (
+            <div>
+              <Link to="/cart-page" className="btn">
+                Cart
+              </Link>
+              <Link
+                to="/"
+                onClick={logOut}
+                className=" font-medium p-3 text-gray-600"
+              >
+                Log out
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <Link to="" className="btn">
+                Sign in
+              </Link>
+              <Link to="/login" className=" font-medium p-3 text-gray-600">
+                Log in
+              </Link>
+            </div>
+          )}
         </div>
 
-        {/* toggle btn */}
+        {/* Toggle button for mobile devices */}
         <div
           className={`transition lg:hidden duration-150 ease-in-out text-2xl text-gray-700 ${
             openNav && "rotate-180 text-yellow-400"
@@ -90,11 +85,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* mobile devices */}
-      <MobileNav
-        navItems={navItems}
-        openNav={openNav}
-        setOpenNav={setOpenNav}
-      />
+      <MobileNav openNav={openNav} setOpenNav={setOpenNav} />
     </header>
   );
 };

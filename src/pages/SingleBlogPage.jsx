@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import PageHeader from "../components/PageHeader";
-import data from "../utilis/blogdata";
+import { blogList } from "../utilis/data";
 import Tags from "../components/shop/Tags";
 import PopularPost from "../components/shop/PopularPost";
 import SocialIcons from "../components/SocialIcons";
@@ -12,8 +11,6 @@ import { FaUser } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 
 const SingleBlogPage = () => {
-  const [blogList, setBlogList] = useState(data);
-
   // get the blog
   let { id } = useParams();
   const result = blogList.filter((blog) => blog.id === Number(id));

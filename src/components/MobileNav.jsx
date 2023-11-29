@@ -1,6 +1,8 @@
 import { NavLink, Link } from "react-router-dom";
 
-const MobileNav = ({ navItems, openNav, setOpenNav }) => {
+import { navItems } from "../utilis/data";
+
+const MobileNav = ({ openNav, setOpenNav }) => {
   // close nav when click on Link
   const closeNav = () => setOpenNav(false);
 
@@ -32,7 +34,9 @@ const MobileNav = ({ navItems, openNav, setOpenNav }) => {
 
         {/* Create & Connect btns*/}
         <div className="flex flex-col">
-          <Link className="btn">Create Account</Link>
+          <Link className="btn" to="/cart-page">
+            Cart
+          </Link>
           <Link className=" font-medium p-3 text-gray-600">Log in</Link>
         </div>
       </div>

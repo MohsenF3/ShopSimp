@@ -1,4 +1,4 @@
-import { tagsList } from "./index";
+import { tagsList } from "../../utilis/data";
 
 const Tags = () => {
   return (

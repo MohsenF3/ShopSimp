@@ -1,4 +1,4 @@
-import { aboutList } from "../components/about";
+import { aboutList } from "../utilis/data";
 
 import PageHeader from "../components/PageHeader";
 

@@ -1,31 +1,4 @@
-// icons
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-
-const social = [
-  {
-    id: 0,
-    iconName: <FaFacebook />,
-    bg: "#1877F2",
-  },
-  {
-    id: 1,
-    iconName: <FaInstagram />,
-    bg: "#E4405F",
-  },
-  {
-    id: 2,
-    iconName: <FaLinkedin />,
-    bg: "#0A66C2",
-  },
-  {
-    id: 3,
-    iconName: <FaTwitter />,
-    bg: "#1DA1F2",
-  },
-];
+import { social } from "../utilis/data";
 
 const SocialIcons = () => {
   return (

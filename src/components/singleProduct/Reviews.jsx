@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import { ReviewList } from "./index";
+import { ReviewList } from "../../utilis/data";
+
 import AddReview from "./AddReview";
 import Description from "./description";
 import ShowReviews from "./ShowReviews";

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import blogList from "../utilis/blogdata";
+import { blogList } from "../utilis/data";
 import PageHeader from "../components/PageHeader";
 
 // icons

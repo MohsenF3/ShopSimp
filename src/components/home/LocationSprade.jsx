@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { clientsList } from "./index";
+import { clientsList } from "../../utilis/data";
 import bg from "../../assets/images/shape-img/01.png";
 
 const LocationSprade = () => {

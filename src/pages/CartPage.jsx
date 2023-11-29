@@ -1,14 +1,31 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// Importing authentication context
+import { useAuth } from "../context/authcontext";
 
 import PageHeader from "../components/PageHeader";
 import CartItems from "../components/cart/CartItems";
 import CartSubtotal from "../components/cart/CartSubtotal";
 
 const CartPage = () => {
+  // Accessing user information from the authentication context
+  const { user } = useAuth();
+
+  // Hook for programmatic navigation
+  const navigate = useNavigate();
+
+  // State to manage cart items
   const [cartItems, setCartItems] = useState([]);
 
+  // Effect to check user authentication and fetch cart items from local storage
   useEffect(() => {
+    // If the user is not authenticated, redirect to the login page
+
+    if (!user.isAuthenticated) {
+      navigate("/login", { replace: true });
+      alert("First You Must Login");
+    }
     // fetch cart items from localstorage
     const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCartItems);

@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import Swal from "sweetalert2";
-
-import Input from "../Input";
+import { useAuth } from "../../context/authcontext";
 
 const AddToCartForm = ({ id, name, price, img }) => {
+  // Accessing the user information from the authentication context
+  const { user } = useAuth();
+  // Accessing the navigation function from react-router-dom
+  const navigate = useNavigate();
+
+  // Using useFormik hook to handle form state and submission
   const formik = useFormik({
     initialValues: {
       id,
@@ -17,26 +22,42 @@ const AddToCartForm = ({ id, name, price, img }) => {
       dicountCode: "",
     },
     onSubmit: async (values, { resetForm }) => {
-      const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-      const existingProductIndex = existingCart.findIndex(
-        (item) => item.id === id
-      );
+      // Check if the user is authenticated
 
-      if (existingProductIndex !== -1) {
-        // update the quantity
-        existingCart[existingProductIndex].quantity = formik.values.quantity;
+      if (!user.isAuthenticated) {
+        // Redirect to the login page if not authenticated
+
+        navigate("/login", { replace: true });
+
+        // Show an alert for the user to log in
+        Swal.fire("First You Must Login");
+        return;
       } else {
-        existingCart.push(values);
+        // Retrieve the existing cart from local storage or create an empty array
+
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+        // Find the index of the existing product in the cart
+
+        const existingProductIndex = existingCart.findIndex(
+          (item) => item.id === id
+        );
+
+        if (existingProductIndex !== -1) {
+          // update the quantity
+          existingCart[existingProductIndex].quantity = formik.values.quantity;
+        } else {
+          existingCart.push(values);
+        }
+
+        // update localstorage
+        localStorage.setItem("cart", JSON.stringify(existingCart));
+
+        // show an alert
+        Swal.fire("Added To Your Cart");
+
+        // reset all values
+        resetForm();
       }
-
-      // update localstorage
-      localStorage.setItem("cart", JSON.stringify(existingCart));
-
-      // show an alert
-      Swal.fire("Added To Your Cart");
-
-      // reset all values
-      resetForm();
     },
   });
 
@@ -114,7 +135,8 @@ const AddToCartForm = ({ id, name, price, img }) => {
           </div>
         </div>
         {/* discount code */}
-        <Input
+        <input
+          className="product-form-input capitalize"
           value={formik.values.dicountCode}
           onChange={formik.handleChange}
           type="text"

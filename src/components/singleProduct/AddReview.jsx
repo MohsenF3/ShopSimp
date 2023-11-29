@@ -2,8 +2,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Swal from "sweetalert2";
 
-import Input from "../Input";
-
 // icons
 import { FaStar } from "react-icons/fa";
 
@@ -83,7 +81,8 @@ const AddReview = ({ setReviewList }) => {
         <div className="flex items-center ">
           {/* name section */}
           <div className="flex-1 flex flex-col gap-2">
-            <Input
+            <input
+              className="product-form-input  flex-1 capitalize"
               value={formik.values.name}
               onChange={formik.handleChange}
               type="text"
@@ -97,7 +96,8 @@ const AddReview = ({ setReviewList }) => {
           </div>
           {/* email section */}
           <div className="flex-1 flex flex-col gap-2 mx-5">
-            <Input
+            <input
+              className="product-form-input  flex-1 capitalize"
               value={formik.values.email}
               onChange={formik.handleChange}
               type="email"

@@ -1,7 +1,7 @@
 import PageHeader from "../components/PageHeader";
 import ContactForm from "../components/contact/ContactForm";
 
-import { contactList } from "../components/contact/index";
+import { contactList } from "../utilis/data";
 
 const Contact = () => {
   return (

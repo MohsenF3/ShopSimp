@@ -34,7 +34,7 @@ const ShowReviews = ({ reviewList }) => {
             </div>
 
             <div className="w-full">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex flex-wrap items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
                   <h3 className=" capitalize">{name}</h3>
                   <span className="text-sm">Posted on {date}</span>

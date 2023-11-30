@@ -21,12 +21,12 @@ const Contact = () => {
               We're Always Eager To Hear From You!
             </h1>
           </div>
-          <div className="flex gap-5">
+          <div className="flex flex-col md:flex-row gap-5">
             {/* map */}
-            <div className="flex-[2] p-2 bg-white rounded-sm shadow-md">
+            <div className="flex-[2] p-2  bg-white rounded-sm shadow-md">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9695.14524039768!2d4.888113607861895!3d52.36282009850982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c3db87e4bb%3A0xb3a175ceffbd0a9f!2sNetherlands!5e0!3m2!1sen!2s!4v1701074631017!5m2!1sen!2s"
-                className="w-full h-full"
+                className="w-full h-64 md:h-full"
               ></iframe>
             </div>
             {/* deatils */}

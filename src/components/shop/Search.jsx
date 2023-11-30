@@ -17,7 +17,7 @@ const Search = ({ data }) => {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full mb-7 px-4 rounded-md p-4 text-gray-500 outline-none bg-slate-200"
+        className="w-full mb-7 rounded-md p-4 text-gray-500 outline-none bg-slate-200"
       />
 
       {/* only show Ul element when we search something */}

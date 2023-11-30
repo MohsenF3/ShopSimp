@@ -40,12 +40,12 @@ const ContactForm = () => {
         <h3 className="text-red-600 text-xl tracking-widest font-medium mb-5">
           Get in touch with Contact us
         </h3>
-        <h1 className="text-3xl font-bold max-w-xl mx-auto leading-normal">
+        <h1 className="md:text-3xl text-2xl font-bold max-w-xl mx-auto leading-normal">
           Fill The Form Below So We Can Get To Know You And Your Needs Better.
         </h1>
       </div>
       <form onSubmit={formik.handleSubmit} className="max-w-4xl mx-auto">
-        <div className="gap-10 grid grid-cols-2 ">
+        <div className="gap-10 grid sm:grid-cols-2 grid-cols-1 ">
           {/* name and email */}
 
           <div className=" relative">
@@ -117,7 +117,7 @@ const ContactForm = () => {
             ) : null}
           </div>
         </div>
-        <div className=" relative w-2/3 my-10">
+        <div className=" relative sm:w-2/3 my-10">
           <textarea
             className="product-form-input shadow-md p-4 capitalize resize-none w-full"
             placeholder="Your Message"

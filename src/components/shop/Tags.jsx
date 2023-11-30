@@ -2,7 +2,7 @@ import { tagsList } from "../../utilis/data";
 
 const Tags = () => {
   return (
-    <div>
+    <div className="hidden md:block">
       <h3 className="text-xl font-bold mb-5">Most Popular Tags</h3>
       <ul className="grid grid-cols-3">
         {tagsList.map(({ link, text }) => (

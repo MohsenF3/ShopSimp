@@ -8,7 +8,7 @@ const ShopCards = ({ data, listStyle }) => {
   return (
     <div
       className={` mb-10 grid gap-5 ${
-        listStyle ? "grid-cols-1" : "grid-cols-3"
+        listStyle ? "grid-cols-1" : "grid-cols-2 md:grid-cols-3"
       }`}
     >
       {data.map(({ id, name, price, img, ratings }) => {

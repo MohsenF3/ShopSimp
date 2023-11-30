@@ -78,7 +78,7 @@ const AddReview = ({ setReviewList }) => {
       <h3 className="text-2xl font-bold">Add a Review</h3>
       <div className="w-1/3 bg-green-500 h-1 mb-10 mt-1"></div>
       <form onSubmit={formik.handleSubmit}>
-        <div className="flex items-center ">
+        <div className="flex flex-wrap max-md:gap-5 items-center">
           {/* name section */}
           <div className="flex-1 flex flex-col gap-2">
             <input

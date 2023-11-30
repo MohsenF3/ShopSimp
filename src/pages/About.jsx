@@ -14,7 +14,7 @@ const About = () => {
       </div>
 
       <div className=" max-w-7xl mx-auto py-28 px-5">
-        <div className="flex gap-10">
+        <div className="flex flex-col md:flex-row gap-10">
           {/* images */}
           <div className=" relative flex-1">
             <div className=" relative ">
@@ -22,14 +22,14 @@ const About = () => {
                 <img src={img1} alt="" className="w-full" />
               </div>
 
-              <div className="absolute w-1/5 flex flex-col items-center border-8 py-2 text-center border-white bottom-0 bg-orange-500 text-white z-10">
+              <div className="absolute w-28 flex flex-col items-center border-8 py-2 text-center border-white bottom-0 bg-orange-500 text-white z-10">
                 <h4 className="font-bold text-3xl">30+</h4>
                 <p className="text-sm font-medium text-gray-100">
                   Years Of Experiences
                 </p>
               </div>
             </div>
-            <div className=" absolute -right-5 -bottom-10">
+            <div className=" absolute  md:block hidden -right-5 -bottom-10">
               <div className=" bg-white shadow-md max-w-md p-2 rounded-sm ">
                 <img src={img2} alt="" className="w-full" />
               </div>

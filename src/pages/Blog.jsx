@@ -17,7 +17,7 @@ const Blog = () => {
       </div>
 
       <div className=" max-w-7xl mx-auto px-5 py-20">
-        <div className="grid grid-cols-3 gap-7">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {blogList.map(({ id, imgUrl, title, desc }) => (
             <Link
               to={`/blog/${id}`}
@@ -25,7 +25,7 @@ const Blog = () => {
               className=" group transition duration-300 shadow-lg p-5 bg-white rounded-sm hover:shadow-md hover:-translate-y-2"
             >
               <div>
-                <img src={imgUrl} alt="" />
+                <img src={imgUrl} alt="" className="w-full" />
               </div>
               <div className="p-2">
                 <h3 className="text-xl font-bold group-hover:text-red-500">

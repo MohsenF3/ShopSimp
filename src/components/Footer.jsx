@@ -60,7 +60,7 @@ const Footer = () => {
           {/* Recent Tweets */}
           <div className="max-sm:col-span-2">
             <h3 className="footer-title">Recent Tweets</h3>
-            <ul className="max-sm:flex gap-5">
+            <ul className="max-sm:flex flex-wrap gap-5">
               {tweetList.map(({ desc, iconName, id }) => (
                 <li key={id} className="flex gap-2 mb-5">
                   <div>{iconName}</div>

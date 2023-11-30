@@ -43,7 +43,7 @@ const SignIn = () => {
   };
   return (
     <div className="  flex items-center justify-center h-screen ">
-      <div className="bg-slate-100 w-1/3 relative px-5 py-20 rounded-sm shadow-md">
+      <div className="bg-slate-100 w-full max-lg:m-5 lg:w-1/3 relative px-5 py-20 rounded-sm shadow-md">
         <button
           className=" absolute top-5 hover:scale-90  transition"
           onClick={handleGoBack}

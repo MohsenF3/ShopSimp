@@ -3,7 +3,7 @@ import { postList } from "../../utilis/data";
 
 const PopularPost = () => {
   return (
-    <div className="mb-8">
+    <div className="mb-8 hidden md:block">
       <h3 className="text-xl font-bold mb-5">Most Popular Post</h3>
       <div>
         {postList.map(({ id, imgUrl, title, date }) => (

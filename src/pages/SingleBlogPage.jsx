@@ -23,7 +23,7 @@ const SingleBlogPage = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-5 py-20">
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* left side */}
 
           <div className=" col-span-2 p-5 bg-white rounded-sm">

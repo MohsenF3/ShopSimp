@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import PageHeader from "../components/PageHeader";
 
+import Loading from "../components/Loading";
+
 // left side
 import products from "../products.json";
 import ShopCards from "../components/shop/ShopCards";
@@ -30,7 +32,7 @@ const Shop = () => {
   // Simulating an asynchronous upload process
   useEffect(() => {
     const uploadProcess = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 4000));
       setLoading(false);
     };
 
@@ -61,68 +63,74 @@ const Shop = () => {
     <div>
       <PageHeader title={"Shop Page"} curPage={"Shop"} />
       {/* main content */}
-      <div className="max-w-7xl mx-auto px-5 my-10 grid grid-cols-3 gap-10">
-        {/* left side  */}
-        <article className="col-span-2">
-          {/* header */}
-          <div className="flex items-center justify-between mb-10">
-            <h3 className="font-medium text-lg tracking-wide">
-              Showing {indexOfFirstPro}-
-              {currentPage === totalPage ? data.length : indexOfLastPro} of{" "}
-              {data.length} Results
-            </h3>
-            {/* grid and list btn */}
-            <div>
-              <button
-                className={`mr-5 ${!listStyle && "text-orange-500"}`}
-                onClick={() => setListStyle(false)}
-              >
-                <TfiLayoutGrid2 />
-              </button>
-              <button
-                className={`mr-5 ${listStyle && "text-orange-500"}`}
-                onClick={() => setListStyle(true)}
-              >
-                <FaList />
-              </button>
-            </div>
-          </div>
-          {/* cards */}
-          <div>
-            <ShopCards data={currentProducts} listStyle={listStyle} />
-          </div>
-          {/* pagination */}
-          <div>
-            <Pagination
-              currentPage={currentPage}
-              onPageChange={handlePageChange}
-              totalPage={totalPage}
-            />
-          </div>
-        </article>
+      <div className="max-w-7xl mx-auto px-5 my-10 grid grid-cols-1 md:grid-cols-3 md:gap-10">
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            {/* left side  */}
+            <article className="col-span-2 max-md:order-2">
+              {/* header */}
+              <div className="flex items-center justify-between mb-10">
+                <h3 className="font-medium text-lg tracking-wide">
+                  Showing {indexOfFirstPro}-
+                  {currentPage === totalPage ? data.length : indexOfLastPro} of{" "}
+                  {data.length} Results
+                </h3>
+                {/* grid and list btn */}
+                <div>
+                  <button
+                    className={`mr-5 ${!listStyle && "text-orange-500"}`}
+                    onClick={() => setListStyle(false)}
+                  >
+                    <TfiLayoutGrid2 />
+                  </button>
+                  <button
+                    className={`mr-5 ${listStyle && "text-orange-500"}`}
+                    onClick={() => setListStyle(true)}
+                  >
+                    <FaList />
+                  </button>
+                </div>
+              </div>
+              {/* cards */}
+              <div>
+                <ShopCards data={currentProducts} listStyle={listStyle} />
+              </div>
+              {/* pagination */}
+              <div>
+                <Pagination
+                  currentPage={currentPage}
+                  onPageChange={handlePageChange}
+                  totalPage={totalPage}
+                />
+              </div>
+            </article>
 
-        {/* right side */}
-        <div className="p-2">
-          {/* search bar */}
-          <div>
-            <Search data={data} />
-          </div>
-          {/* filter data by categories */}
-          <div>
-            <ShopCategory
-              onChangeCategory={handleChangeCategory}
-              allCategories={allCategories}
-              selectedCategory={selectedCategory}
-              setData={setData}
-            />
-          </div>
-          <div>
-            <PopularPost />
-          </div>
-          <div>
-            <Tags />
-          </div>
-        </div>
+            {/* right side */}
+            <div className="md:p-2 max-md:order-1">
+              {/* search bar */}
+              <div>
+                <Search data={data} />
+              </div>
+              {/* filter data by categories */}
+              <div>
+                <ShopCategory
+                  onChangeCategory={handleChangeCategory}
+                  allCategories={allCategories}
+                  selectedCategory={selectedCategory}
+                  setData={setData}
+                />
+              </div>
+              <div>
+                <PopularPost />
+              </div>
+              <div>
+                <Tags />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

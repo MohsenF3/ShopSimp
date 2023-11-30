@@ -28,11 +28,11 @@ const SingleProductPage = () => {
       </div>
 
       {/* main contetn */}
-      <div className="grid grid-cols-3 gap-10 max-w-7xl py-16 px-5 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10  max-w-7xl py-16 px-5 mx-auto">
         {/* left side */}
         <div className="col-span-2">
           {/* product info */}
-          <div className="flex gap-6  mb-9">
+          <div className="flex flex-col md:flex-row gap-6 mb-16 md:mb-9">
             <div>
               <img src={img} alt="" className="rounded-sm" />
             </div>

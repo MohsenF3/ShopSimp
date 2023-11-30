@@ -11,7 +11,7 @@ const Description = ({ img }) => {
         eligendi dolores, facere deserunt adipisci beatae debitis,
         exercitationem quisquam quibusdam illo laudantium a saepe eaque.
       </p>
-      <div className="flex my-10 gap-5">
+      <div className="flex flex-col md:flex-row my-10 gap-5">
         <ul className="flex-1">
           <li className="flex items-center gap-2 mb-3">
             <FaStar fill="orange" size={25} />

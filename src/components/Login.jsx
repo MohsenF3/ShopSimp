@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import { useAuth } from "../context/authcontext";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FaArrowLeft } from "react-icons/fa6";
 
@@ -120,7 +120,7 @@ const Login = () => {
                       </div>
 
                       {/* <!--Submit button--> */}
-                      <div className="mb-12 pb-1 pt-1 text-center">
+                      <div className=" pb-1 pt-1 text-center">
                         <button
                           className="mb-3 inline-block w-full rounded px-6 py-3 text-md font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
                           type="submit"
@@ -131,6 +131,12 @@ const Login = () => {
                         >
                           Log in
                         </button>
+                        <p className="mt-5">
+                          Don't have an account?{" "}
+                          <Link to="/sign-in" className="text-blue-500">
+                            Singin
+                          </Link>
+                        </p>
                       </div>
                     </form>
                   </div>

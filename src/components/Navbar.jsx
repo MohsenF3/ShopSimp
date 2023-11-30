@@ -49,29 +49,31 @@ const Navbar = () => {
           </ul>
 
           {/* Conditional rendering based on user authentication */}
-          {user.isAuthenticated ? (
-            <div>
-              <Link to="/cart-page" className="btn">
-                Cart
-              </Link>
-              <Link
-                to="/"
-                onClick={logOut}
-                className=" font-medium p-3 text-gray-600"
-              >
-                Log out
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <Link to="" className="btn">
-                Sign in
-              </Link>
-              <Link to="/login" className=" font-medium p-3 text-gray-600">
-                Log in
-              </Link>
-            </div>
-          )}
+          <div>
+            {user.isAuthenticated ? (
+              <>
+                <Link to="/cart-page" className="btn text-white">
+                  Cart
+                </Link>
+                <Link
+                  to="/"
+                  onClick={logOut}
+                  className=" font-medium p-3 text-gray-600"
+                >
+                  Log out
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/sign-in" className="btn text-white">
+                  Sign in
+                </Link>
+                <Link to="/login" className=" font-medium p-3 text-gray-600">
+                  Log in
+                </Link>
+              </>
+            )}
+          </div>
         </div>
 
         {/* Toggle button for mobile devices */}
@@ -85,7 +87,12 @@ const Navbar = () => {
         </div>
       </nav>
       {/* mobile devices */}
-      <MobileNav openNav={openNav} setOpenNav={setOpenNav} />
+      <MobileNav
+        openNav={openNav}
+        setOpenNav={setOpenNav}
+        user={user}
+        logOut={logOut}
+      />
     </header>
   );
 };

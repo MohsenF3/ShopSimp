@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <section className="h-screen  bg-neutral-200 dark:bg-neutral-700">
-      <div className="container mx-auto h-full p-10">
+      <div className="container mx-auto h-full p-5 md:p-10">
         <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
             <div className=" relative block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
@@ -144,7 +144,7 @@ const Login = () => {
 
                 {/* <!-- Right column container with background and description--> */}
                 <div
-                  className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
+                  className=" hidden md:flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
                   style={{
                     background:
                       "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",

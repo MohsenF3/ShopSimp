@@ -3,8 +3,8 @@ import { aboutList } from "../utilis/data";
 import PageHeader from "../components/PageHeader";
 
 // images
-import img1 from "../assets/images/about/01.jpg";
-import img2 from "../assets/images/about/02.jpg";
+import img1 from "../../public/images/about/01.jpg";
+import img2 from "../../public/images/about/02.jpg";
 
 const About = () => {
   return (

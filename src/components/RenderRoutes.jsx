@@ -12,7 +12,7 @@ import About from "../pages/About.jsx";
 import Contact from "../pages/Contact.jsx";
 import Login from "../components/Login.jsx";
 import NotFound from "../pages/NotFound.jsx";
-import SignIn from "./SignIn.jsx";
+import Register from "./Register.jsx";
 
 const RenderRoutes = () => {
   return (
@@ -28,7 +28,7 @@ const RenderRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart-page" element={<CartPage />} />
         </Route>
-        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import appImg1 from "../../assets/images/app/01.jpg";
-import appImg2 from "../../assets/images/app/02.jpg";
+import appImg1 from "../../../public/images/app/01.jpg";
+import appImg2 from "../../../public/images/app/02.jpg";
 
 const AppSection = () => {
   return (

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import img from "../assets/images/logo/logo.png";
+import img from "../../public/images/logo/logo.png";
 
 import { FaArrowLeft } from "react-icons/fa6";
 
@@ -15,10 +15,14 @@ const SignIn = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
+      email: "",
       password: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
+      email: Yup.string()
+        .email("Your Email Is Not Correct")
+        .required("Email is required"),
       password: Yup.string()
         .required("Password is required")
         .min(8, "Password must be at least 8 characters")
@@ -79,6 +83,31 @@ const SignIn = () => {
                 {formik.errors.name && formik.touched.name ? (
                   <div className="text-red-500 text-lg">
                     {formik.errors.name}
+                  </div>
+                ) : null}
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Email
+              </label>
+              <div>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  className="block w-full mb-3 p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+                {formik.errors.email && formik.touched.email ? (
+                  <div className="text-red-500 text-lg">
+                    {formik.errors.email}
                   </div>
                 ) : null}
               </div>

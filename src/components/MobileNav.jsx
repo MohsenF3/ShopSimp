@@ -56,7 +56,7 @@ const MobileNav = ({ openNav, setOpenNav, user, logOut }) => {
             </>
           ) : (
             <>
-              <Link to="/sign-in" className="btn text-white">
+              <Link to="/register" className="btn text-white">
                 Sign in
               </Link>
               <Link to="/login" className=" font-medium p-3 text-gray-600">

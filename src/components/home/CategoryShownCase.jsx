@@ -4,8 +4,8 @@ import { ProductData } from "../../utilis/data";
 import CategoryShownCaseCard from "./CategoryShownCaseCard";
 
 // shapes
-import shape1 from "../../assets/images/shape-img/icon/01.png";
-import shape2 from "../../assets/images/shape-img/icon/02.png";
+import shape1 from "../../../public/images/shape-img/icon/01.png";
+import shape2 from "../../../public/images/shape-img/icon/02.png";
 
 // category items
 const categories = ["All", "Shoes", "Bags", "Phones", "Beauty"];

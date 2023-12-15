@@ -32,7 +32,7 @@ const Shop = () => {
   // Simulating an asynchronous upload process
   useEffect(() => {
     const uploadProcess = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 4000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setLoading(false);
     };
 

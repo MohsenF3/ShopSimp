@@ -1,7 +1,7 @@
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
-import img from "../../assets/images/instructor/01.png";
+import img from "../../../public/images/instructor/01.png";
 
 import { countList } from "../../utilis/data";
 

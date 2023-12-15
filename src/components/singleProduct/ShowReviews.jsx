@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa";
 
-import defaultImg from "../../assets/images/clients/avater.jpg";
+import defaultImg from "../../../public/images/clients/avater.jpg";
 
 const ShowReviews = ({ reviewList }) => {
   return (

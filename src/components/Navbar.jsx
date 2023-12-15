@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { navItems } from "../utilis/data";
 import MobileNav from "./MobileNav";
-import logo from "../assets/images/logo/logo.png";
+import logo from "../../public/images/logo/logo.png";
 
 // icons
 import { FaArrowDown } from "react-icons/fa6";
@@ -65,7 +65,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/sign-in" className="btn text-white">
+                <Link to="/register" className="btn text-white">
                   Sign in
                 </Link>
                 <Link to="/login" className=" font-medium p-3 text-gray-600">

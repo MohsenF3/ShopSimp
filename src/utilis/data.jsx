@@ -12,7 +12,7 @@ import { FaLinkedin } from "react-icons/fa";
 export const blogList = [
   {
     id: 1,
-    imgUrl: "/src/assets/images/blog/01.jpg",
+    imgUrl: "/images/blog/01.jpg",
     imgAlt: "Blog Thumb",
     title: "Business Ueporting Rouncil Them Could Plan.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -20,7 +20,7 @@ export const blogList = [
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/blog/02.jpg",
+    imgUrl: "/images/blog/02.jpg",
     imgAlt: "Blog Thumb",
     title: "Financial Reporting Qouncil What Could More.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -28,7 +28,7 @@ export const blogList = [
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/blog/03.jpg",
+    imgUrl: "/images/blog/03.jpg",
     imgAlt: "Blog Thumb",
     title: "Consulting Reporting Qounc Arei Could More.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -36,7 +36,7 @@ export const blogList = [
   },
   {
     id: 4,
-    imgUrl: "/src/assets/images/blog/04.jpg",
+    imgUrl: "/images/blog/04.jpg",
     imgAlt: "Blog Thumb",
     title: "Strategic Social Media and of visual design.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -44,7 +44,7 @@ export const blogList = [
   },
   {
     id: 5,
-    imgUrl: "/src/assets/images/blog/05.jpg",
+    imgUrl: "/images/blog/05.jpg",
     imgAlt: "Blog Thumb",
     title: "Find the Right Path for your Group Course online.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -52,7 +52,7 @@ export const blogList = [
   },
   {
     id: 6,
-    imgUrl: "/src/assets/images/blog/06.jpg",
+    imgUrl: "/images/blog/06.jpg",
     imgAlt: "Blog Thumb",
     title: "Learn by doing with Real World Projects other countries.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -60,7 +60,7 @@ export const blogList = [
   },
   {
     id: 7,
-    imgUrl: "/src/assets/images/blog/07.jpg",
+    imgUrl: "/images/blog/07.jpg",
     imgAlt: "Blog Thumb",
     title: "The Importance Of Intrinsic for Students.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -68,7 +68,7 @@ export const blogList = [
   },
   {
     id: 8,
-    imgUrl: "/src/assets/images/blog/08.jpg",
+    imgUrl: "/images/blog/08.jpg",
     imgAlt: "Blog Thumb",
     title: "A Better Alternative To Grading Student Writing.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -76,7 +76,7 @@ export const blogList = [
   },
   {
     id: 9,
-    imgUrl: "/src/assets/images/blog/09.jpg",
+    imgUrl: "/images/blog/09.jpg",
     imgAlt: "Blog Thumb",
     title: "The Challenge Global Learning In Public Education.",
     desc: "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
@@ -92,7 +92,7 @@ export const navItems = [
 ];
 export const ProductData = [
   {
-    imgUrl: "src/assets/images/categoryTab/01.jpg",
+    imgUrl: "/images/categoryTab/01.jpg",
     cate: "Shoes",
     title: "Nike Premier X",
     author: "assets/images/course/author/01.jpg",
@@ -101,7 +101,7 @@ export const ProductData = [
     id: 1,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/02.jpg",
+    imgUrl: "/images/categoryTab/02.jpg",
     cate: "Bags",
     title: "Asthetic Bags",
     author: "assets/images/course/author/02.jpg",
@@ -110,16 +110,16 @@ export const ProductData = [
     id: 2,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/03.jpg",
+    imgUrl: "/images/categoryTab/03.jpg",
     cate: "Phones",
     title: "iPhone 12",
-    author: "src/assets/images/categoryTab/brand/apple.png",
+    author: "/images/categoryTab/brand/apple.png",
     brand: "Apple",
     price: "$199.00",
     id: 3,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/04.jpg",
+    imgUrl: "/images/categoryTab/04.jpg",
     cate: "Bags",
     title: "Hiking Bag 15 Nh100",
     author: "assets/images/course/author/04.jpg",
@@ -128,7 +128,7 @@ export const ProductData = [
     id: 4,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/05.jpg",
+    imgUrl: "/images/categoryTab/05.jpg",
     cate: "Shoes",
     title: "Outdoor Sports Shoes",
     author: "assets/images/course/author/05.jpg",
@@ -137,7 +137,7 @@ export const ProductData = [
     id: 5,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/06.jpg",
+    imgUrl: "/images/categoryTab/06.jpg",
     cate: "Beauty",
     title: "COSRX Snail Mucin",
     author: "assets/images/course/author/06.jpg",
@@ -146,7 +146,7 @@ export const ProductData = [
     id: 6,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/07.jpg",
+    imgUrl: "/images/categoryTab/07.jpg",
     cate: "Bags",
     title: "Look Less Chanel Bag ",
     author: "assets/images/course/author/01.jpg",
@@ -155,7 +155,7 @@ export const ProductData = [
     id: 7,
   },
   {
-    imgUrl: "src/assets/images/categoryTab/08.jpg",
+    imgUrl: "/images/categoryTab/08.jpg",
     cate: "Shoes",
     title: "Casual Sneakers",
     author: "assets/images/course/author/02.jpg",
@@ -190,109 +190,109 @@ export const countList = [
 export const categoryList = [
   {
     id: 0,
-    imgUrl: "src/assets/images/category/01.jpg",
+    imgUrl: "/images/category/01.jpg",
     title: "DSLR Camera",
   },
   {
     id: 1,
-    imgUrl: "src/assets/images/category/02.jpg",
+    imgUrl: "/images/category/02.jpg",
     title: "Shoes",
   },
   {
     id: 2,
-    imgUrl: "src/assets/images/category/03.jpg",
+    imgUrl: "/images/category/03.jpg",
     title: "Photography",
   },
   {
     id: 3,
-    imgUrl: "src/assets/images/category/04.jpg",
+    imgUrl: "/images/category/04.jpg",
     title: "Formal Dress",
   },
   {
     id: 4,
-    imgUrl: "src/assets/images/category/05.jpg",
+    imgUrl: "/images/category/05.jpg",
     title: "Colorful Bags",
   },
   {
     id: 5,
-    imgUrl: "src/assets/images/category/06.jpg",
+    imgUrl: "/images/category/06.jpg",
     title: "Home Decor",
   },
 ];
 export const clientsList = [
   {
     id: 0,
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "/images/clients/avater.jpg",
     text: "Join with Us",
   },
   {
     id: 1,
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "/images/clients/avater.jpg",
     text: "Join with Us",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "/images/clients/avater.jpg",
     text: "Join with Us",
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "/images/clients/avater.jpg",
     text: "Join with Us",
   },
   {
     id: 4,
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "/images/clients/avater.jpg",
     text: "Join with Us",
   },
   {
     id: 5,
-    imgUrl: "/src/assets/images/clients/avater.jpg",
+    imgUrl: "/images/clients/avater.jpg",
     text: "Join with Us",
   },
 ];
 export const sponsorList = [
   {
     id: 0,
-    imgUrl: "/src/assets/images/sponsor/01.png",
+    imgUrl: "/images/sponsor/01.png",
   },
   {
     id: 1,
-    imgUrl: "/src/assets/images/sponsor/02.png",
+    imgUrl: "/images/sponsor/02.png",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/sponsor/03.png",
+    imgUrl: "/images/sponsor/03.png",
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/sponsor/04.png",
+    imgUrl: "/images/sponsor/04.png",
   },
   {
     id: 4,
-    imgUrl: "/src/assets/images/sponsor/05.png",
+    imgUrl: "/images/sponsor/05.png",
   },
   {
     id: 5,
-    imgUrl: "/src/assets/images/sponsor/06.png",
+    imgUrl: "/images/sponsor/06.png",
   },
 ];
 export const aboutList = [
   {
     id: 0,
-    imgUrl: "/src/assets/images/about/icon/01.jpg",
+    imgUrl: "/images/about/icon/01.jpg",
     title: "Skilled Instructors",
     desc: "Distinctively provide acces mutfuncto users whereas communicate leveraged services",
   },
   {
     id: 1,
-    imgUrl: "/src/assets/images/about/icon/02.jpg",
+    imgUrl: "/images/about/icon/02.jpg",
     title: "Get Certificate",
     desc: "Distinctively provide acces mutfuncto users whereas communicate leveraged services",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/about/icon/03.jpg",
+    imgUrl: "/images/about/icon/03.jpg",
     title: "Online Classes",
     desc: "Distinctively provide acces mutfuncto users whereas communicate leveraged services",
   },
@@ -300,25 +300,25 @@ export const aboutList = [
 export const contactList = [
   {
     id: 0,
-    imgUrl: "/src/assets/images/icon/01.png",
+    imgUrl: "/images/icon/01.png",
     title: "Office Address",
     desc: "1201 park street, Fifth Avenue",
   },
   {
     id: 1,
-    imgUrl: "/src/assets/images/icon/02.png",
+    imgUrl: "/images/icon/02.png",
     title: "Phone number",
     desc: "+22698 745 632,02 982 745",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/icon/03.png",
+    imgUrl: "/images/icon/03.png",
     title: "Send email",
     desc: "admin@shopcart.com",
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/icon/04.png",
+    imgUrl: "/images/icon/04.png",
     title: "Our website",
     desc: "www.shopcart.com",
   },
@@ -348,25 +348,25 @@ export const social = [
 export const postList = [
   {
     id: 1,
-    imgUrl: "/src/assets/images/blog/10.jpg",
+    imgUrl: "/images/blog/10.jpg",
     title: "Poor People Campaign Our Resources",
     date: "Jun 05,2022",
   },
   {
     id: 2,
-    imgUrl: "/src/assets/images/blog/11.jpg",
+    imgUrl: "/images/blog/11.jpg",
     title: "Poor Peoples Campaign Our Resources",
     date: "Jun 05,2022",
   },
   {
     id: 3,
-    imgUrl: "/src/assets/images/blog/12.jpg",
+    imgUrl: "/images/blog/12.jpg",
     title: "Poor Peoples Campaign Our Resources",
     date: "Jun 05,2022",
   },
   {
     id: 4,
-    imgUrl: "/src/assets/images/blog/09.jpg",
+    imgUrl: "/images/blog/09.jpg",
     title: "Poor Peoples Campaign Our Resources",
     date: "Jun 05,2022",
   },
@@ -399,28 +399,28 @@ export const tagsList = [
 ];
 export const ReviewList = [
   {
-    imgUrl: "/src/assets/images/instructor/01.jpg",
+    imgUrl: "/images/instructor/01.jpg",
     name: "Ganelon Boileau",
     date: "Posted on Jun 10, 2022 at 6:57 am",
     desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     rating: 3,
   },
   {
-    imgUrl: "/src/assets/images/instructor/02.jpg",
+    imgUrl: "/images/instructor/02.jpg",
     name: "Morgana Cailot",
     date: "Posted on Jun 10, 2022 at 6:57 am",
     desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     rating: 4,
   },
   {
-    imgUrl: "/src/assets/images/instructor/03.jpg",
+    imgUrl: "/images/instructor/03.jpg",
     name: "Telford Bois",
     date: "Posted on Jun 10, 2022 at 6:57 am",
     desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",
     rating: 5,
   },
   {
-    imgUrl: "/src/assets/images/instructor/04.jpg",
+    imgUrl: "/images/instructor/04.jpg",
     name: "Cher Daviau",
     date: "Posted on Jun 10, 2022 at 6:57 am",
     desc: "Enthusiast build innovativ initiatives before lonterm high-impact awesome theme seo psd porta monetize covalent leadership after without resource.",

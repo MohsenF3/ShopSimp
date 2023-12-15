@@ -69,13 +69,13 @@
   }
 
   .bg-banner {
-    background-image: url("./assets/images/bg-img/06.jpg");
+    background-image: url("/images/bg-img/06.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
   }
   .bg-register {
-    background-image: url("./assets/images/bg-img/07.jpg");
+    background-image: url("/images/bg-img/07.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;

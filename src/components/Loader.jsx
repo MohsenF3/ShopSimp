@@ -4,7 +4,7 @@ const Loader = () => {
   return (
     <div className="flex text-center flex-col items-center justify-center w-screen h-screen">
       <h3 className="text-gradient font-mono text-4xl font-bold mb-7">
-        Loding
+        Loading
       </h3>
       <div className="flex flex-row  gap-2  ">
         <div className="w-4 h-4 rounded-full bg-yellow-400 animate-bounce"></div>

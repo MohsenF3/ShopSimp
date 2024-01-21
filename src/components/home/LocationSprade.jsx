@@ -20,7 +20,7 @@ const LocationSprade = () => {
         <img src={bg} alt="" className="w-full brightness-75" />
         <div>
           {clientsList.map(({ id, imgUrl, text }) => (
-            <Link to="/sign-up" className="first-thumb group " key={id}>
+            <Link to="/register" className="first-thumb group " key={id}>
               <div className="popup pointer-events-none">{text}</div>
               <div className="second-thumb">
                 <img src={imgUrl} alt="" className="rounded-full" />

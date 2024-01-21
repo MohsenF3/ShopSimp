@@ -1,18 +1,20 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy } from "react";
 
 // Importing page components
 import Layout from "./Layout .jsx";
-import Home from "../pages/Home.jsx";
-import Shop from "../pages/Shop.jsx";
-import SingleProductPage from "../pages/SingleProductPage.jsx";
-import CartPage from "../pages/CartPage.jsx";
-import Blog from "../pages/Blog.jsx";
-import SingleBlogPage from "../pages/SingleBlogPage.jsx";
-import About from "../pages/About.jsx";
-import Contact from "../pages/Contact.jsx";
 import Login from "../components/Login.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import Register from "./Register.jsx";
+
+const Home = lazy(() => import("../pages/Home.jsx"));
+const Shop = lazy(() => import("../pages/Shop.jsx"));
+const SingleProductPage = lazy(() => import("../pages/SingleProductPage.jsx"));
+const Blog = lazy(() => import("../pages/Blog.jsx"));
+const SingleBlogPage = lazy(() => import("../pages/SingleBlogPage.jsx"));
+const About = lazy(() => import("../pages/About.jsx"));
+const Contact = lazy(() => import("../pages/Contact.jsx"));
+const CartPage = lazy(() => import("../pages/CartPage.jsx"));
 
 const RenderRoutes = () => {
   return (

@@ -1,83 +1,57 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-import allProducts from "../products.json";
+import Star from "../components/Star";
 
-import PageHeader from "../components/PageHeader";
-import AddToCartForm from "../components/singleProduct/AddToCartForm";
-import PopularPost from "../components/shop/PopularPost";
-import Tags from "../components/shop/Tags";
-import Reviews from "../components/singleProduct/Reviews";
+import AddToCartForm from "../components/singleProduct/CartForm";
+import SuggestedProducts from "../components/singleProduct/SuggestedProducts";
+import NotFound from "./NotFound";
+import { getProductById } from "../lib/utils";
+import ProductImage from "../components/singleProduct/ProductImage";
 
 const SingleProductPage = () => {
-  const [products, setProducts] = useState(allProducts);
   // get the id of product
   const { id } = useParams();
 
-  // get the product
-  const result = products.filter((pro) => pro.id === id);
-  const { name, price, img, ratings, ratingsCount, seller } = result[0];
+  if (!id) {
+    return <NotFound />;
+  }
 
-  // create an dynamic Array base on rating
-  const rate = Array.from({ length: ratings });
+  let product = getProductById(id);
+
+  if (!product) {
+    return <NotFound />;
+  }
+
+  const { name, price, img, ratings, seller, category } = product;
 
   return (
-    <div>
-      <div>
-        <PageHeader title={"Our Shop Single"} curPage={"Single Product"} />
+    <div className="container">
+      <div className="flex md:flex-row flex-col gap-10 lg:min-h-[calc(100vh-8rem)]">
+        <div data-aos-delay="200" data-aos="fade-right">
+          <ProductImage imgUrl={img} />
+        </div>
+
+        <div data-aos="fade-left">
+          <h2 className="text-3xl font-bold">{name}</h2>
+          <div className="mt-1 mb-3">
+            <Star ratings={ratings} />
+          </div>
+          <h5 className="text-xl font-bold">${price}</h5>
+          <p className="font-medium mb-3 mt-1">{seller}</p>
+          <p className="text-gray-500">
+            Enthusiast build innovativ initiatives before lonterm high-impact
+            awesome theme seo psd porta monetize covalent leadership after
+            without resource.
+          </p>
+
+          <AddToCartForm id={id} />
+        </div>
       </div>
 
-      {/* main contetn */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10  max-w-7xl py-16 px-5 mx-auto">
-        {/* left side */}
-        <div className="col-span-2">
-          {/* product info */}
-          <div className="flex flex-col md:flex-row gap-6 mb-16 md:mb-9">
-            <div>
-              <img src={img} alt="" className="rounded-sm" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold">{name}</h2>
-              <div className="mt-1 mb-3">
-                {rate.map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-xl">
-                    &#9733;
-                  </span>
-                ))}
-                <span className="ml-1 text-gray-500">
-                  ({ratingsCount} review)
-                </span>
-              </div>
-              <h5 className="text-xl font-bold">${price}</h5>
-              <p className="font-medium mb-3 mt-1">{seller}</p>
-              <p className="text-gray-500">
-                Enthusiast build innovativ initiatives before lonterm
-                high-impact awesome theme seo psd porta monetize covalent
-                leadership after without resource.
-              </p>
-
-              {/* add to cart section */}
-              <AddToCartForm id={id} name={name} price={price} img={img} />
-            </div>
-          </div>
-
-          {/* reviews */}
-          <div>
-            <Reviews img={img} />
-          </div>
-        </div>
-        {/* right side */}
-        <div>
-          {/* popular post section */}
-          <aside>
-            <PopularPost />
-          </aside>
-
-          {/* popular tag section */}
-          <aside>
-            <Tags />
-          </aside>
-        </div>
+      {/* suggested products */}
+      <div className="overflow-hidden mb-10 mt-16">
+        <h3 className="text-3xl font-medium mb-10">You might also like</h3>
+        <SuggestedProducts category={category} id={id} />
       </div>
     </div>
   );

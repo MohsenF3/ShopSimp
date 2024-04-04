@@ -1,27 +1,28 @@
 {
-  "name": "advanced-ecommerce-react",
+  "name": "ShopSimp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node minify.cjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "formik": "^2.4.5",
+    "aos": "^2.3.4",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
-    "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
-    "react-intersection-observer": "^9.5.3",
-    "react-loading-skeleton": "^3.3.1",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.19.0",
-    "sweetalert2": "^11.10.1",
-    "swiper": "^11.0.4",
-    "yup": "^1.3.2"
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
@@ -34,6 +35,7 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
+    "uglify-js": "^3.17.4",
     "vite": "^5.0.0"
   }
 }

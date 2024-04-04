@@ -1,55 +1,50 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { Suspense, lazy, useEffect } from "react";
+import Loader from "./components/Loader.jsx";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import RenderRoutes from "./components/RenderRoutes.jsx";
-import { authContect } from "./context/authcontext.jsx";
-import Swal from "sweetalert2";
+const Home = lazy(() => import("./pages/Home.jsx"));
+const Shop = lazy(() => import("./pages/Shop.jsx"));
+const SingleProductPage = lazy(() => import("./pages/SingleProductPage.jsx"));
+const About = lazy(() => import("./pages/About.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
+const CartPage = lazy(() => import("./pages/CartPage.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
+const Layout = lazy(() => import("./components/Layout.jsx"));
 
 const App = () => {
-  // Get the current pathname from the location object
   const { pathname } = useLocation();
-
-  // State to manage user authentication
-  const [user, setUser] = useState({});
-
   // Scroll to the top of the page when the pathname changes
   useEffect(() => {
     window.scroll(0, 0);
   }, [pathname]);
 
   useEffect(() => {
-    const response = JSON.parse(localStorage.getItem("user"));
-    setUser(
-      response || {
-        name: "",
-        isAuthenticated: false,
-      }
-    );
+    AOS.init({
+      duration: 700,
+      easing: "ease-in-sine",
+      delay: 60,
+      offset: 50,
+      once: true,
+    });
+    AOS.refresh();
   }, []);
 
-  // Function to handle user login
-  const login = (obj) => {
-    return new Promise((resolve, reject) => {
-      if (obj.name === user.name && obj.password === user.password) {
-        setUser({ name: obj.name, isAuthenticated: true });
-        resolve("login is succesfull");
-      } else {
-        reject("username or password incorrect");
-      }
-    });
-  };
-
-  // Function to handle user logout
-  const logOut = () => {
-    setUser({ ...user, isAuthenticated: false });
-    localStorage.removeItem("user");
-  };
-
   return (
-    // Provide authentication context to the entire app
-    <authContect.Provider value={{ user, setUser, login, logOut }}>
-      <RenderRoutes />
-    </authContect.Provider>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:id" element={<SingleProductPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart-page" element={<CartPage />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 };
 

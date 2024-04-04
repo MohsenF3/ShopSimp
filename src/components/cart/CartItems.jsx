@@ -2,67 +2,68 @@ import { Link } from "react-router-dom";
 
 // icons
 import { MdDelete } from "react-icons/md";
+import { getProductById } from "../../lib/utils";
 
 const CartItems = (props) => {
-  const { cartItems, onIncrement, onDecrement, totalPrice, onRemove } = props;
-  return (
-    <tbody>
-      {cartItems.map((item) => (
-        <tr key={item.id}>
-          {/* first td */}
-          <td className="p-5 border-b flex items-center gap-5">
-            <Link to={`/shop/${item.id}`} className="w-20 peer ">
-              <img src={item.img} alt="" />
-            </Link>
-            <h4 className="peer-hover:text-yellow-500 font-medium">
-              {item.name}
-            </h4>
-          </td>
-          {/* second td */}
-          <td className="p-5 border-b font-medium">
-            <span>${item.price}</span>
-          </td>
-          {/* third td */}
-          <td className="p-5 border-b">
-            <div className="flex flex-row h-11 w-1/3 mx-auto ">
-              <button
-                type="button"
-                onClick={() => onDecrement(item)}
-                className=" bg-gray-300 border-r text-gray-600  hover:bg-gray-400  w-20 rounded-l"
-              >
-                −
-              </button>
-              <input
-                type="text"
-                readOnly
-                value={item.quantity}
-                className=" text-center w-full bg-gray-300 font-semibold text-md  text-gray-700 outline-none"
-              />
+  const {
+    item: { id, color, quantity },
+    onIncrement,
+    onDecrement,
+    totalPrice,
+    onRemove,
+  } = props;
 
-              <button
-                type="button"
-                onClick={() => onIncrement(item)}
-                className="bg-gray-300 border-l text-gray-600  hover:bg-gray-400  w-20 rounded-r"
-              >
-                +
-              </button>
-            </div>
-          </td>
-          <td className="p-5 border-b font-medium">
-            $<span>{totalPrice(item)}</span>
-          </td>
-          <td className="p-5 border-b">
-            <a
-              href="#"
-              className="hover:text-red-500 text-xl"
-              onClick={() => onRemove(item)}
-            >
-              <MdDelete />
-            </a>
-          </td>
-        </tr>
-      ))}
-    </tbody>
+  const getProduct = getProductById(id);
+  const product = { ...getProduct, color: color, quantity: quantity };
+
+  return (
+    <tr>
+      {/* first td */}
+      <td className="p-5 border-b w-full md:w-auto">
+        <Link
+          to={`/shop/${product.id}`}
+          className="w-full group flex items-center gap-5"
+        >
+          <img src={product.img} alt="" className="rounded-3xl w-24" />
+          <h4 className=" group-hover:text-brandYellow font-medium max-sm:text-sm">
+            {product.name}
+          </h4>
+        </Link>
+      </td>
+      {/* second td */}
+      <td className="p-5 border-b font-medium hidden lg:table-cell text-center">
+        <span>${product.price}</span>
+      </td>
+      {/* second td */}
+      <td className="p-5 border-b font-medium hidden lg:table-cell text-center">
+        <span className="capitalize">{product.color}</span>
+      </td>
+      {/* third td */}
+      <td className="hidden md:table-cell border-b p-5">
+        <div className="flex items-center justify-center gap-4">
+          <button type="button" onClick={() => onDecrement(product.id)}>
+            −
+          </button>
+          <span className="text-xl font-medium">{product.quantity}</span>
+
+          <button type="button" onClick={() => onIncrement(product.id)}>
+            +
+          </button>
+        </div>
+      </td>
+      <td className="p-5 border-b font-medium  text-center">
+        $<span>{totalPrice(product)}</span>
+      </td>
+      <td className="p-5 border-b">
+        <a
+          href="#"
+          className="hover:text-red-500 text-xl flex items-center justify-center"
+          onClick={() => onRemove(product.id)}
+        >
+          <MdDelete />
+        </a>
+      </td>
+    </tr>
   );
 };
 

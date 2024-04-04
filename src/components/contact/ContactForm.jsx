@@ -1,148 +1,98 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import Swal from "sweetalert2";
+import { useRef } from "react";
 
-const ContactForm = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      tel: "",
-      subject: "",
-      message: "",
-    },
-    // Validation schema using Yup for form field validations.
-    validationSchema: Yup.object({
-      name: Yup.string().required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
-      tel: Yup.number("Please Type Your Number").required("Required"),
-      subject: Yup.string().required("Required"),
-      message: Yup.string().required("Required"),
-    }),
+export default function ContactForm() {
+  const inputRef = useRef(null);
 
-    onSubmit: async (values, { resetForm }) => {
-      // show an alert
-      Swal.fire({
-        icon: "success",
-        title: "Thank You For Contacting Us! We Appreciate You",
-        showConfirmButton: false,
-        timer: 3000,
-      });
-
-      // reset all values
-      resetForm();
-    },
-  });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    inputRef.current.reset();
+  };
 
   return (
-    <div className="px-5 mx-auto max-w-7xl py-20">
-      <div className="text-center mb-10">
-        <h3 className="text-red-600 text-xl tracking-widest font-medium mb-5">
-          Get in touch with Contact us
+    <div className="max-w-md">
+      <div className=" mb-10">
+        <h3
+          data-aos="fade-right"
+          className="text-primary text-4xl tracking-widest font-bold mb-5"
+        >
+          Get in touch with us
         </h3>
-        <h1 className="md:text-3xl text-2xl font-bold max-w-xl mx-auto leading-normal">
-          Fill The Form Below So We Can Get To Know You And Your Needs Better.
-        </h1>
+        <p
+          data-aos="fade-right"
+          data-aos-delay="200"
+          className="font-medium text-slate-700"
+        >
+          Get in touch for a quick response from our team. We're here to help
+          you with any questions or concerns you may have, so don't hesitate to
+          reach out.
+        </p>
       </div>
-      <form onSubmit={formik.handleSubmit} className="max-w-4xl mx-auto">
-        <div className="gap-10 grid sm:grid-cols-2 grid-cols-1 ">
-          {/* name and email */}
+      <form onSubmit={handleSubmit} className="space-y-8" ref={inputRef}>
+        <div className="flex gap-16">
+          {/* first name */}
+          <div data-aos="fade-right" data-aos-delay="400">
+            <CustomInput id="firstName" label="First name" style />
+          </div>
 
-          <div className=" relative">
-            <input
-              className="product-form-input p-4 capitalize w-full shadow-md"
-              placeholder="Your Name *"
-              id="name"
-              name="name"
-              type="text"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.name && formik.errors.name ? (
-              <div className="text-red-500 font-medium absolute right-2 top-4">
-                {formik.errors.name}
-              </div>
-            ) : null}
-          </div>
-          <div className=" relative">
-            <input
-              className="product-form-input p-4 capitalize w-full shadow-md"
-              placeholder="Your Email *"
-              id="email"
-              name="email"
-              type="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="text-red-500 font-medium absolute right-2 top-4">
-                {formik.errors.email}
-              </div>
-            ) : null}
-          </div>
-          <div className=" relative">
-            <input
-              className="product-form-input p-4 capitalize w-full shadow-md"
-              placeholder="Mobile Number *"
-              id="tel"
-              name="tel"
-              type="tel"
-              value={formik.values.tel}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.tel && formik.errors.tel ? (
-              <div className="text-red-500 font-medium absolute right-2 top-4">
-                {formik.errors.tel}
-              </div>
-            ) : null}
-          </div>
-          <div className=" relative">
-            <input
-              className="product-form-input p-4 capitalize w-full shadow-md"
-              placeholder="Your Subject *"
-              id="subject"
-              name="subject"
-              type="text"
-              value={formik.values.subject}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.subject && formik.errors.subject ? (
-              <div className="text-red-500 font-medium absolute right-2 top-4">
-                {formik.errors.subject}
-              </div>
-            ) : null}
+          {/* last name */}
+          <div data-aos="fade-right" data-aos-delay="600">
+            <CustomInput id="lastName" label="Last name" style />
           </div>
         </div>
-        <div className=" relative sm:w-2/3 my-10">
+
+        {/* email */}
+        <div data-aos="fade-right" data-aos-delay="800">
+          <CustomInput id="email" label="Email" type="email" />
+        </div>
+
+        {/* message */}
+        <div className="relative" data-aos="fade-right" data-aos-delay="1000">
           <textarea
-            className="product-form-input shadow-md p-4 capitalize resize-none w-full"
-            placeholder="Your Message"
-            name="message"
             id="message"
-            rows="7"
-            value={formik.values.message}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          ></textarea>
-          {formik.touched.message && formik.errors.message ? (
-            <div className="text-red-500 font-medium absolute right-2 top-4">
-              {formik.errors.message}
-            </div>
-          ) : null}
+            required
+            name="message"
+            type="text"
+            className="border-b border-gray-400 min-h-[110px] max-h-[250px] w-full py-1 focus:border-b-2 focus:border-brandGreen transition-colors focus:outline-none peer bg-inherit"
+          />
+          <label
+            for="message"
+            className="absolute font-medium left-0 top-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all peer-focus:text-brandGreen peer-valid:text-xs peer-valid:-top-4 peer-valid:text-brandGreen"
+          >
+            Message
+          </label>
         </div>
+
         <button
           type="submit"
-          className="btn block mt-10 bg-green-500 hover:bg-green-600 text-white"
+          data-aos="fade-up"
+          data-aos-delay="1200"
+          className="btn w-full"
         >
-          Send Our Message
+          Send message
         </button>
       </form>
     </div>
   );
-};
+}
 
-export default ContactForm;
+function CustomInput({ id, label, style, type = "text" }) {
+  return (
+    <div className="relative">
+      <input
+        required
+        id={id}
+        name={id}
+        type={type}
+        className={`border-b border-gray-400 ${
+          style ? "w-full md:w-[110%]" : "w-full"
+        } py-1 focus:border-b-2 focus:border-brandGreen transition-colors focus:outline-none peer bg-inherit`}
+      />
+      <label
+        for={id}
+        className="absolute font-medium left-0 top-0 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-brandGreen peer-valid:text-xs peer-valid:-top-4 peer-valid:text-brandGreen transition-all "
+      >
+        {label}
+      </label>
+    </div>
+  );
+}

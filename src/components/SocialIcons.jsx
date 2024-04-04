@@ -1,4 +1,4 @@
-import { social } from "../utilis/data";
+import { social } from "../data/placeholder";
 
 const SocialIcons = () => {
   return (

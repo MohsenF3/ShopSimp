@@ -1,67 +1,48 @@
 import { Link } from "react-router-dom";
-//
-import { IoMdEye } from "react-icons/io";
-import { FaHeart } from "react-icons/fa";
 import { MdShoppingCart } from "react-icons/md";
+import Star from "../Star";
+import Image from "../Image";
 
-const ShopCards = ({ data, listStyle }) => {
+const ShopCards = ({ id, aosDelay, name, price, img, ratings }) => {
   return (
     <div
-      className={` mb-10 grid gap-5 ${
-        listStyle ? "grid-cols-1" : "grid-cols-2 md:grid-cols-3"
-      }`}
+      data-aos={aosDelay && "fade-up"}
+      data-aos-delay={aosDelay}
+      className="border flex rounded-3xl  flex-col group"
     >
-      {data.map(({ id, name, price, img, ratings }) => {
-        // create an dynamic Array base on rating
-        const rate = Array.from({ length: ratings });
-        return (
-          <div
-            key={id}
-            className={`border flex ${
-              listStyle ? "flex-row items-center gap-5" : "flex-col "
-            }`}
+      <div className="relative min-h-[220px] rounded-t-3xl overflow-hidden">
+        <Image
+          src={img}
+          alt="Product Image"
+          width="100%"
+          height={275}
+          className="h-full w-full object-cover rounded-t-3xl !transition-all duration-300 ease-in-out group-hover:-rotate-6 group-hover:scale-125"
+        />
+      </div>
+      <div className="p-3 flex flex-col h-full justify-between lg:max-h-[140px]">
+        <h3 className=" sm:text-lg font-bold">{name}</h3>
+
+        {/* show stars */}
+        <div className="max-md:my-3">
+          <Star ratings={ratings} />
+        </div>
+
+        <div className="flex sm:flex-row flex-col sm:items-center  justify-between">
+          {/* price */}
+          <span className="font-bold text-xl sm:text-2xl">${price}</span>
+
+          {/* Shop Now button */}
+          <Link
+            to={`/shop/${id}`}
+            className="bg-brandGreen max-md:mt-2 text-white p-2 group/button flex items-center justify-center rounded-3xl overflow-hidden active:scale-95 transition-all duration-150"
           >
-            <div className={`relative group ${listStyle && "w-1/3"}`}>
-              <img src={img} alt="" />
-              {/* on hover */}
-              <div className=" absolute inset-0 bg-[rgba(0,0,0,0.4)] scale-0 opacity-0 group-hover:scale-100 duration-200 group-hover:opacity-100 transition  grid place-items-center">
-                <div className="flex items-center gap-5 text-white">
-                  <Link
-                    to={`/shop/${id}`}
-                    className="p-3 bg-red-400 rounded-full"
-                  >
-                    <IoMdEye />
-                  </Link>
-                  <Link to="/" className="p-3 bg-red-400 rounded-full">
-                    <FaHeart />
-                  </Link>
-                  <Link to="/cart-page" className="p-3 bg-red-400 rounded-full">
-                    <MdShoppingCart />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <Link
-              to={`/shop/${id}`}
-              className={`p-2 group ${
-                listStyle ? " text-left" : "text-center"
-              }`}
-            >
-              <h3 className=" text-sm font-medium group-hover:text-yellow-500">
-                {name}
-              </h3>
-              <div>
-                {rate.map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-xl">
-                    &#9733;
-                  </span>
-                ))}
-              </div>
-              <span className="font-bold">${price}</span>
-            </Link>
-          </div>
-        );
-      })}
+            <MdShoppingCart className="sm:-translate-x-8 -translate-x-12 group-hover/button:-translate-x-1 transition-all duration-200" />
+            <span className="-translate-x-2 group-hover/button:translate-x-0 transition-all duration-200 text-sm font-medium">
+              Shop Now
+            </span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

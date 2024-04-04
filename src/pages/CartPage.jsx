@@ -1,157 +1,114 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// Importing authentication context
-import { useAuth } from "../context/authcontext";
-
-import PageHeader from "../components/PageHeader";
 import CartItems from "../components/cart/CartItems";
-import CartSubtotal from "../components/cart/CartSubtotal";
+import { useLocalStorage } from "../lib/hooks";
+import { getProductById } from "../lib/utils";
 
 const CartPage = () => {
-  // Accessing user information from the authentication context
-  const { user } = useAuth();
+  const [cart, setCart] = useLocalStorage("cart", []);
 
-  // Hook for programmatic navigation
-  const navigate = useNavigate();
+  // increment the quantity
+  const handleIncrement = (id) => {
+    setCart((prevState) => {
+      return prevState.map((item) => {
+        if (item.id === id && item.quantity <= 10) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
+    });
+  };
 
-  // State to manage cart items
-  const [cartItems, setCartItems] = useState([]);
+  // decrement the quantity
+  const handleDecrement = (id) => {
+    setCart((prevState) => {
+      return prevState.map((item) => {
+        if (item.id === id && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+    });
+  };
 
-  // Effect to check user authentication and fetch cart items from local storage
-  useEffect(() => {
-    // If the user is not authenticated, redirect to the login page
-
-    if (!user.isAuthenticated) {
-      navigate("/login", { replace: true });
-      alert("First You Must Login");
-    }
-    // fetch cart items from localstorage
-    const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCartItems);
-  }, []);
+  // handle remove items
+  const handleRemoveItem = (id) => {
+    setCart((preState) => preState.filter((item) => item.id !== id));
+  };
 
   // calculate total price
   const calculateTotalPrice = (item) => {
     return item.price * item.quantity;
   };
 
-  // update localstorage
-  const updateLocalStorage = (cart) => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+  const orderTotal = () => {
+    const newCart = cart.map((item) => {
+      const getProduct = getProductById(item.id);
+      return { ...getProduct, quantity: item.quantity };
+    });
+
+    return newCart
+      .reduce((total, item) => {
+        return total + calculateTotalPrice(item);
+      }, 0)
+      .toFixed(2);
   };
-
-  // handle quantity increment
-  const handleIncrement = (item) => {
-    item.quantity += 1;
-    setCartItems([...cartItems]);
-
-    // update localstorage
-    updateLocalStorage(cartItems);
-  };
-
-  // handle quantity decrement
-  const handleDecrement = (item) => {
-    if (item.quantity > 1) {
-      item.quantity -= 1;
-      setCartItems([...cartItems]);
-
-      // update localstorage
-      updateLocalStorage(cartItems);
-    }
-  };
-
-  // handle remove items
-  const handleRemoveItem = (item) => {
-    const updatedCartItem = cartItems.filter(
-      (cartItem) => cartItem.id !== item.id
-    );
-
-    // update new cart
-    setCartItems(updatedCartItem);
-
-    updateLocalStorage(updatedCartItem);
-  };
-
-  // cart subtotal
-  const cartSubtotal = cartItems.reduce((totla, item) => {
-    return totla + calculateTotalPrice(item);
-  }, 0);
-
-  // order total
-  const orderTotal = cartSubtotal;
 
   return (
     <div>
-      <div>
-        <PageHeader title="Cart Page" curPage="Cart" />
-      </div>
+      <div className="container overflow-auto h-[calc(100vh-6rem)] overflow-auto">
+        {cart.length === 0 ? (
+          <div className="flex items-center justify-end flex-col gap-5">
+            <h3 className="text-4xl font-medium">There is no product</h3>
+            <Link to="/shop" className="btn">
+              Shop now
+            </Link>
+          </div>
+        ) : (
+          <table className="w-full table-auto">
+            <thead className="bg-primary text-white">
+              <tr>
+                <th className="p-5 font-medium text-left">Product</th>
+                <th className="p-5 font-medium hidden lg:table-cell">Price</th>
+                <th className="p-5 font-medium hidden lg:table-cell ">Color</th>
+                <th className="p-5 font-medium hidden md:table-cell">
+                  Quantity
+                </th>
+                <th className="p-5 font-medium">Total</th>
+                <th className="p-5 font-medium">Delete</th>
+              </tr>
+            </thead>
 
-      <div className=" max-w-7xl mx-auto py-20 px-5">
-        {/* our product table */}
-        <table className="w-full ">
-          <thead className="bg-orange-500 text-white text-left  ">
-            <tr>
-              <th className="p-5 font-medium">Product</th>
-              <th className="p-5 font-medium">Price</th>
-              <th className="p-5 font-medium text-center">Quantity</th>
-              <th className="p-5 font-medium">Total</th>
-              <th className="p-5 font-medium">Edit</th>
-            </tr>
-          </thead>
-
-          {cartItems.length === 0 ? (
             <tbody>
-              <tr>
-                <td className="p-5 text-xl mb-10 font-medium capitalize">
-                  <span className="text-red-500">Opps...</span> there is no
-                  item.
-                </td>
-              </tr>
-              <tr>
-                <td className="p-5">
-                  <Link
-                    to="/shop"
-                    className="btn bg-green-500 hover:bg-green-600 text-white"
-                  >
-                    Shop Now
-                  </Link>
-                </td>
-              </tr>
+              {cart.map((item) => (
+                <CartItems
+                  key={item.id}
+                  item={item}
+                  onIncrement={handleIncrement}
+                  onDecrement={handleDecrement}
+                  totalPrice={calculateTotalPrice}
+                  onRemove={handleRemoveItem}
+                />
+              ))}
             </tbody>
-          ) : (
-            <CartItems
-              cartItems={cartItems}
-              onIncrement={handleIncrement}
-              onDecrement={handleDecrement}
-              totalPrice={calculateTotalPrice}
-              onRemove={handleRemoveItem}
-            />
-          )}
-        </table>
+          </table>
+        )}
 
         {/* subtotal */}
-        <div className="mt-10 p-5">
-          <h3 className="text-xl font-bold">Cart Totals</h3>
-          <CartSubtotal cartSubtotal={cartSubtotal} orderTotal={orderTotal} />
-          <form className="mt-10 p-5">
-            <input
-              type="text"
-              placeholder="Coupon Code ..."
-              className="product-form-input mr-2 py-3"
-            />
-            <button
-              type="submit"
-              className="btn bg-green-500 hover:bg-green-600 text-white"
-            >
-              Apply Coupon
-            </button>
-          </form>
+        <div className="my-10">
+          <h3 className="text-xl font-bold">Cart Total</h3>
+          <ul className="w-full sm:w-1/2 mt-5">
+            <li className="border-b p-5 flex items- font-medium justify-between">
+              <span className="">Order Total:</span>
+              <span>${orderTotal()}</span>
+            </li>
+          </ul>
+
           <button
-            type="button"
-            className="btn m-5 bg-orange-500 hover:bg-orange-600 text-white"
+            disabled={cart.length === 0}
+            className="btn mt-7 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
-            CheckOut
+            Continue to checkout
           </button>
         </div>
       </div>

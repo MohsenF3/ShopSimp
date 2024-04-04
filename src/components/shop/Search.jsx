@@ -1,52 +1,40 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { FiSearch } from "react-icons/fi";
+import { useQueryParam } from "../../lib/hooks";
+import { useDebouncedCallback } from "use-debounce";
 
-const Search = ({ data }) => {
-  // value of input
-  const [searchTerm, setSearchTerm] = useState("");
+export default function Search() {
+  const [name, setName] = useQueryParam("name");
+  const inputRef = useRef(null);
 
-  // filtered base on products name
-  const filteredProductsByName = data.filter(({ name }) =>
-    name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSearch = useDebouncedCallback((term) => {
+    let search = term.toLowerCase().trim();
+    setName(search);
+  }, 300);
 
   return (
-    <div>
+    <form onSubmit={(e) => e.preventDefault()} className="input-wrapper">
+      <button
+        className={`icon text-2xl text-white peer`}
+        onClick={() => inputRef.current.focus()}
+      >
+        <FiSearch />
+      </button>
       <input
+        placeholder="search..."
+        className={`input bg-brandYellow peer-focus:w-64 peer-focus:border-brandYellow focus:w-64 max-sm:w-full max-sm:bg-transparent max-sm:!border-b-[3px] max-sm:!rounded-none max-sm:border-brandYellow ${
+          name
+            ? "!w-64 bg-transparent border-b-[3px] border-brandYellow !rounded-none"
+            : ""
+        }`}
+        name="text"
         type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full mb-7 rounded-md p-4 text-gray-500 outline-none bg-slate-200"
+        defaultValue={name}
+        onChange={(e) => {
+          handleSearch(e.target.value);
+        }}
+        ref={inputRef}
       />
-
-      {/* only show Ul element when we search something */}
-
-      {searchTerm && (
-        <ul className="px-4 bg-white z-20">
-          {filteredProductsByName
-            .slice(1, 10)
-            .map(({ id, name, price, img }) => (
-              <Link
-                to={`/shop/${id}`}
-                key={id}
-                className="flex gap-3 mb-5 group"
-              >
-                <div className=" max-w-[20%]">
-                  <img src={img} alt="Product Image" className="rounded-sm" />
-                </div>
-                <div className="flex flex-col">
-                  <h5 className=" font-medium group-hover:text-yellow-500">
-                    {name}
-                  </h5>
-                  <p className="text-sm font-medium">${price}</p>
-                </div>
-              </Link>
-            ))}
-        </ul>
-      )}
-    </div>
+    </form>
   );
-};
-
-export default Search;
+}

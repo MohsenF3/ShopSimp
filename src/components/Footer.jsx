@@ -2,17 +2,14 @@ import { Link } from "react-router-dom";
 
 import SocialIcons from "./SocialIcons";
 
-import { addressList } from "../utilis/data";
-import { ItemList } from "../utilis/data";
-import { quickList } from "../utilis/data";
-import { tweetList } from "../utilis/data";
-
-// icons
-import { FaRegCopyright } from "react-icons/fa6";
+import { addressList } from "../data/placeholder";
+import { ItemList } from "../data/placeholder";
+import { quickList } from "../data/placeholder";
+import { tweetList } from "../data/placeholder";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gray-950  px-5 py-20">
+    <footer className=" bg-gray-950  px-5 pt-16 pb-10">
       <div className="max-w-7xl mx-auto text-gray-200">
         {/* main footer */}
         <div className=" grid grid-cols-2 max-md:gap-10 md:grid-cols-4 mb-5">
@@ -20,8 +17,8 @@ const Footer = () => {
           <div className=" max-sm:col-span-2">
             <h3 className="footer-title">About ShopCart</h3>
             <p className=" max-w-[85%]">
-              Eduaid theme number one world class university in the world There
-              are student are studing always in this university for all time.
+              ShopSimp is one of the world class Website in the world There are
+              thousand of people but stuff.
             </p>
             {/* addressList */}
             <div className="my-4">
@@ -69,12 +66,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-        </div>
-        {/* copyright section */}
-        <div className="flex items-center gap-2 mt-10">
-          <FaRegCopyright />
-          2023 developed by
-          <span className="text-yellow-400 font-bold">Mohsen</span>
         </div>
       </div>
     </footer>

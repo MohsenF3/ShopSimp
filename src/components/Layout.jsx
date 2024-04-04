@@ -1,12 +1,15 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { lazy } from "react";
+import Navbar from "./header/Navbar";
+const Footer = lazy(() => import("./Footer"));
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <main className="mt-24">
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

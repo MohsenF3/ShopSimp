@@ -1,8 +1,9 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { Suspense, lazy, useEffect } from "react";
-import Loader from "./components/Loader.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import { Suspense, lazy, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Loader from "./components/Loader.jsx";
 
 const Home = lazy(() => import("./pages/Home.jsx"));
 const Shop = lazy(() => import("./pages/Shop.jsx"));

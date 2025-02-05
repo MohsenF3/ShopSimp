@@ -1,10 +1,12 @@
+import {
+  FaEnvelopeOpen,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaPhoneAlt,
+  FaTwitter,
+} from "react-icons/fa";
 import { SiGooglemaps } from "react-icons/si";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaEnvelopeOpen } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 
 import products from "../products.json";
 

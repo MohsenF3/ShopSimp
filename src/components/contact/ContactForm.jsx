@@ -10,10 +10,10 @@ export default function ContactForm() {
 
   return (
     <div className="max-w-md">
-      <div className=" mb-10">
+      <div className="mb-10">
         <h3
           data-aos="fade-right"
-          className="text-primary text-4xl tracking-widest font-bold mb-5"
+          className="mb-5 text-4xl font-bold tracking-widest text-primary"
         >
           Get in touch with us
         </h3>
@@ -52,11 +52,11 @@ export default function ContactForm() {
             required
             name="message"
             type="text"
-            className="border-b border-gray-400 min-h-[110px] max-h-[250px] w-full py-1 focus:border-b-2 focus:border-brandGreen transition-colors focus:outline-none peer bg-inherit"
+            className="peer max-h-[250px] min-h-[110px] w-full border-b border-gray-400 bg-inherit py-1 transition-colors focus:border-b-2 focus:border-brandGreen focus:outline-none"
           />
           <label
-            for="message"
-            className="absolute font-medium left-0 top-0 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all peer-focus:text-brandGreen peer-valid:text-xs peer-valid:-top-4 peer-valid:text-brandGreen"
+            htmlFor="message"
+            className="absolute left-0 top-0 cursor-text font-medium transition-all peer-valid:-top-4 peer-valid:text-xs peer-valid:text-brandGreen peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brandGreen"
           >
             Message
           </label>
@@ -85,11 +85,11 @@ function CustomInput({ id, label, style, type = "text" }) {
         type={type}
         className={`border-b border-gray-400 ${
           style ? "w-full md:w-[110%]" : "w-full"
-        } py-1 focus:border-b-2 focus:border-brandGreen transition-colors focus:outline-none peer bg-inherit`}
+        } peer bg-inherit py-1 transition-colors focus:border-b-2 focus:border-brandGreen focus:outline-none`}
       />
       <label
-        for={id}
-        className="absolute font-medium left-0 top-0 cursor-text peer-focus:text-xs peer-focus:-top-4 peer-focus:text-brandGreen peer-valid:text-xs peer-valid:-top-4 peer-valid:text-brandGreen transition-all "
+        htmlFor={id}
+        className="absolute left-0 top-0 cursor-text font-medium transition-all peer-valid:-top-4 peer-valid:text-xs peer-valid:text-brandGreen peer-focus:-top-4 peer-focus:text-xs peer-focus:text-brandGreen"
       >
         {label}
       </label>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import CartItems from "../components/cart/CartItems";
-import { useLocalStorage } from "../lib/hooks";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import { getProductById } from "../lib/utils";
 
 const CartPage = () => {
@@ -56,9 +56,9 @@ const CartPage = () => {
 
   return (
     <div>
-      <div className="container overflow-auto h-[calc(100vh-6rem)] overflow-auto">
+      <div className="container h-[calc(100vh-6rem)] overflow-auto">
         {cart.length === 0 ? (
-          <div className="flex items-center justify-end flex-col gap-5">
+          <div className="flex flex-col items-center justify-end gap-5">
             <h3 className="text-4xl font-medium">There is no product</h3>
             <Link to="/shop" className="btn">
               Shop now
@@ -68,10 +68,10 @@ const CartPage = () => {
           <table className="w-full table-auto">
             <thead className="bg-primary text-white">
               <tr>
-                <th className="p-5 font-medium text-left">Product</th>
-                <th className="p-5 font-medium hidden lg:table-cell">Price</th>
-                <th className="p-5 font-medium hidden lg:table-cell ">Color</th>
-                <th className="p-5 font-medium hidden md:table-cell">
+                <th className="p-5 text-left font-medium">Product</th>
+                <th className="hidden p-5 font-medium lg:table-cell">Price</th>
+                <th className="hidden p-5 font-medium lg:table-cell">Color</th>
+                <th className="hidden p-5 font-medium md:table-cell">
                   Quantity
                 </th>
                 <th className="p-5 font-medium">Total</th>
@@ -97,8 +97,8 @@ const CartPage = () => {
         {/* subtotal */}
         <div className="my-10">
           <h3 className="text-xl font-bold">Cart Total</h3>
-          <ul className="w-full sm:w-1/2 mt-5">
-            <li className="border-b p-5 flex items- font-medium justify-between">
+          <ul className="mt-5 w-full sm:w-1/2">
+            <li className="items- flex justify-between border-b p-5 font-medium">
               <span className="">Order Total:</span>
               <span>${orderTotal()}</span>
             </li>
@@ -106,7 +106,7 @@ const CartPage = () => {
 
           <button
             disabled={cart.length === 0}
-            className="btn mt-7 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="btn mt-7 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
           >
             Continue to checkout
           </button>

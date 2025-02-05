@@ -3,7 +3,7 @@ import { navItems } from "../../data/placeholder";
 
 export default function Links({ onClose }) {
   return (
-    <ul className="flex flex-col lg:flex-row lg:items-center gap-5">
+    <ul className="flex flex-col gap-5 lg:flex-row lg:items-center">
       {navItems.map(({ id, path, link }) => (
         <li key={id}>
           <NavLink

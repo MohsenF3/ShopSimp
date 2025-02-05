@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { FiSearch } from "react-icons/fi";
-import { useQueryParam } from "../../lib/hooks";
 import { useDebouncedCallback } from "use-debounce";
+import { useQueryParam } from "../../hooks/useQueryParam";
 
 export default function Search() {
   const [name, setName] = useQueryParam("name");
@@ -15,16 +15,16 @@ export default function Search() {
   return (
     <form onSubmit={(e) => e.preventDefault()} className="input-wrapper">
       <button
-        className={`icon text-2xl text-white peer`}
+        className={`icon peer text-2xl text-white`}
         onClick={() => inputRef.current.focus()}
       >
         <FiSearch />
       </button>
       <input
         placeholder="search..."
-        className={`input bg-brandYellow peer-focus:w-64 peer-focus:border-brandYellow focus:w-64 max-sm:w-full max-sm:bg-transparent max-sm:!border-b-[3px] max-sm:!rounded-none max-sm:border-brandYellow ${
+        className={`input bg-brandYellow focus:w-64 peer-focus:w-64 peer-focus:border-brandYellow max-sm:w-full max-sm:!rounded-none max-sm:!border-b-[3px] max-sm:border-brandYellow max-sm:bg-transparent ${
           name
-            ? "!w-64 bg-transparent border-b-[3px] border-brandYellow !rounded-none"
+            ? "!w-64 !rounded-none border-b-[3px] border-brandYellow bg-transparent"
             : ""
         }`}
         name="text"

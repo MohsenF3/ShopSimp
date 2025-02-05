@@ -1,6 +1,6 @@
 import Slider from "react-slick";
-import ShopCards from "../shop/ShopCards";
 import { filterByCategory } from "../../lib/utils";
+import ShopCards from "../shop/ShopCards";
 
 export default function SuggestedProducts({ category, id }) {
   const settings = {
@@ -43,7 +43,7 @@ export default function SuggestedProducts({ category, id }) {
     <div>
       <Slider {...settings}>
         {data.map((pro) => (
-          <div className=" px-3 h-full" key={pro.id}>
+          <div className="h-full px-3" key={pro.id}>
             <ShopCards key={pro.id} {...pro} />
           </div>
         ))}

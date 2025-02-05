@@ -1,7 +1,7 @@
-import products from "../../products.json";
-import ShopCards from "../shop/ShopCards";
 import { Link } from "react-router-dom";
 import { addProductsDelay } from "../../lib/utils";
+import products from "../../products.json";
+import ShopCards from "../shop/ShopCards";
 
 const HomeProducts = () => {
   const getRandomProducts = () => {
@@ -18,20 +18,20 @@ const HomeProducts = () => {
 
   return (
     <div>
-      <div className="text-center mb-20">
-        <h1 className="font-bold text-gray-950 text-3xl lg:text-5xl max-md:mt-10 mb-5">
+      <div className="mb-20 text-center">
+        <h1 className="mb-5 text-3xl font-bold text-gray-950 max-md:mt-10 lg:text-5xl">
           Our Products
         </h1>
       </div>
       <div className="container md:py-16">
-        <div className="grid gap-5  grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
           {randomProducts.map((pro) => (
             <ShopCards key={pro.id} {...pro} />
           ))}
         </div>
       </div>
       <div
-        className="flex items-center justify-center mt-8 md:m-0"
+        className="mt-8 flex items-center justify-center md:m-0"
         data-aos="fade-up"
         data-aos-delay="500"
       >

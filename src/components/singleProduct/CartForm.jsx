@@ -1,7 +1,7 @@
-import SelectColor from "./SelectColor";
-import toast from "react-hot-toast";
-import { useLocalStorage } from "../../lib/hooks";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+import SelectColor from "./SelectColor";
 
 const CartForm = ({ id }) => {
   const [cart, setCart] = useLocalStorage("cart", []);
@@ -20,7 +20,7 @@ const CartForm = ({ id }) => {
           }
 
           return item;
-        })
+        }),
       );
     } else {
       setCart((preState) => [...preState, { id, ...fields }]);
@@ -70,20 +70,20 @@ const CartForm = ({ id }) => {
         <button
           type="button"
           onClick={onDecrement}
-          className="text-xl bg-slate-300 w-10 h-10 rounded-3xl grid place-items-center"
+          className="grid h-10 w-10 place-items-center rounded-3xl bg-slate-300 text-xl"
         >
           −
         </button>
         <span
           id="number"
-          className="font-bold text-2xl bg-slate-300 w-16 h-16 rounded-full grid place-items-center"
+          className="grid h-16 w-16 place-items-center rounded-full bg-slate-300 text-2xl font-bold"
         >
           {fields.quantity}
         </span>
         <button
           type="button"
           onClick={onIncrement}
-          className="text-xl bg-slate-300 w-10 h-10 rounded-3xl grid place-items-center"
+          className="grid h-10 w-10 place-items-center rounded-3xl bg-slate-300 text-xl"
         >
           +
         </button>

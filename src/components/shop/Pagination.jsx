@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { generatePagination } from "../../lib/utils";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import { useQueryParam } from "../../lib/hooks";
+import { useQueryParam } from "../../hooks/useQueryParam";
+import { generatePagination } from "../../lib/utils";
 
 const DOTS = "...";
 
@@ -49,9 +49,9 @@ const Pagination = ({ totalPage }) => {
   };
 
   return (
-    <div className="flex items-center justify-center gap-5 mt-5 mb-8">
+    <div className="mb-8 mt-5 flex items-center justify-center gap-5">
       <button
-        className=" hover:primary disabled:text-gray-300"
+        className="hover:primary disabled:text-gray-300"
         disabled={numberPage === 1}
         onClick={onPrevious}
       >
@@ -63,14 +63,14 @@ const Pagination = ({ totalPage }) => {
           return number === DOTS ? (
             <button
               key={crypto.randomUUID()}
-              className="w-10 h-10 bg-white shadow-md rounded-full"
+              className="h-10 w-10 rounded-full bg-white shadow-md"
             >
               {DOTS}
             </button>
           ) : (
             <button
               key={number}
-              className={`pagination-button mx-2 w-10 h-10 bg-white shadow-md rounded-full hover:bg-primary hover:text-white transition-all duration-150 ${
+              className={`pagination-button mx-2 h-10 w-10 rounded-full bg-white shadow-md transition-all duration-150 hover:bg-primary hover:text-white ${
                 numberPage === number ? "active" : ""
               }`}
               onClick={() => {
@@ -86,7 +86,7 @@ const Pagination = ({ totalPage }) => {
 
       {/*  */}
       <button
-        className=" hover:primary disabled:text-gray-300"
+        className="hover:primary disabled:text-gray-300"
         disabled={numberPage === totalPage}
         onClick={onNext}
       >

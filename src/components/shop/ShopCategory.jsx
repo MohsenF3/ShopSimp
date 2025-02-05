@@ -1,5 +1,5 @@
 import { categories } from "../../data/placeholder";
-import { useQueryParam } from "../../lib/hooks";
+import { useQueryParam } from "../../hooks/useQueryParam";
 
 const ShopCategory = () => {
   let [category, setCategory] = useQueryParam("category");
@@ -10,12 +10,12 @@ const ShopCategory = () => {
 
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold mb-2">All Categories</h3>
+      <h3 className="mb-2 text-xl font-bold">All Categories</h3>
       <ul className="grid grid-cols-3 gap-3">
         <li>
           <button
-            className={`py-2 px-4 rounded-3xl w-full cursor-pointer text-center block whitespace-nowrap text-sm font-medium transition-all duration-150 hover:scale-95 hover:shadow-none shadow-md ${
-              !category ? "bg-yellow-400 text-white scale-95" : "bg-slate-200"
+            className={`block w-full cursor-pointer whitespace-nowrap rounded-3xl px-4 py-2 text-center text-sm font-medium shadow-md transition-all duration-150 hover:scale-95 hover:shadow-none ${
+              !category ? "scale-95 bg-yellow-400 text-white" : "bg-slate-200"
             }`}
             onClick={() => handleClick("")}
           >
@@ -26,9 +26,9 @@ const ShopCategory = () => {
           <li key={item}>
             <button
               onClick={() => handleClick(item)}
-              className={`py-2 px-4 rounded-3xl w-full cursor-pointer block text-center whitespace-nowrap text-sm font-medium transition-all duration-150 hover:scale-95 hover:shadow-none shadow-md ${
+              className={`block w-full cursor-pointer whitespace-nowrap rounded-3xl px-4 py-2 text-center text-sm font-medium shadow-md transition-all duration-150 hover:scale-95 hover:shadow-none ${
                 item === category
-                  ? "bg-yellow-400 text-white scale-95"
+                  ? "scale-95 bg-yellow-400 text-white"
                   : "bg-slate-200"
               }`}
             >

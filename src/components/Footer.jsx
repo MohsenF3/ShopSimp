@@ -2,21 +2,23 @@ import { Link } from "react-router-dom";
 
 import SocialIcons from "./SocialIcons";
 
-import { addressList } from "../data/placeholder";
-import { ItemList } from "../data/placeholder";
-import { quickList } from "../data/placeholder";
-import { tweetList } from "../data/placeholder";
+import {
+  addressList,
+  ItemList,
+  quickList,
+  tweetList,
+} from "../data/placeholder";
 
 const Footer = () => {
   return (
-    <footer className=" bg-gray-950  px-5 pt-16 pb-10">
-      <div className="max-w-7xl mx-auto text-gray-200">
+    <footer className="bg-gray-950 px-5 pb-10 pt-16">
+      <div className="mx-auto max-w-7xl text-gray-200">
         {/* main footer */}
-        <div className=" grid grid-cols-2 max-md:gap-10 md:grid-cols-4 mb-5">
+        <div className="mb-5 grid grid-cols-2 max-md:gap-10 md:grid-cols-4">
           {/* About section */}
-          <div className=" max-sm:col-span-2">
+          <div className="max-sm:col-span-2">
             <h3 className="footer-title">About ShopCart</h3>
-            <p className=" max-w-[85%]">
+            <p className="max-w-[85%]">
               ShopSimp is one of the world class Website in the world There are
               thousand of people but stuff.
             </p>
@@ -57,9 +59,9 @@ const Footer = () => {
           {/* Recent Tweets */}
           <div className="max-sm:col-span-2">
             <h3 className="footer-title">Recent Tweets</h3>
-            <ul className="max-sm:flex flex-wrap gap-5">
+            <ul className="flex-wrap gap-5 max-sm:flex">
               {tweetList.map(({ desc, iconName, id }) => (
-                <li key={id} className="flex gap-2 mb-5">
+                <li key={id} className="mb-5 flex gap-2">
                   <div>{iconName}</div>
                   {desc}
                 </li>

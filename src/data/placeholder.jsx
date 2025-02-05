@@ -101,64 +101,7 @@ export const addressList = [
     text: "info@shopcart.com",
   },
 ];
-export const ItemList = [
-  {
-    text: "All Products",
-    link: "/shop",
-    id: 0,
-  },
-  {
-    text: "Shop",
-    link: "/shop",
-    id: 1,
-  },
-  {
-    text: "Blog",
-    link: "/blog",
-    id: 2,
-  },
-  {
-    text: "About",
-    link: "/about",
-    id: 3,
-  },
-  {
-    text: "Policy",
-    id: 4,
-    link: "#",
-  },
-  {
-    text: "FAQs",
-    link: "/about",
-    id: 5,
-  },
-];
-export const quickList = [
-  {
-    text: "Summer Sessions",
-    link: "#",
-  },
-  {
-    text: "Events",
-    link: "#",
-  },
-  {
-    text: "Gallery",
-    link: "#",
-  },
-  {
-    text: "Forums",
-    link: "#",
-  },
-  {
-    text: "Privacy Policy",
-    link: "#",
-  },
-  {
-    text: "Terms of Use",
-    link: "#",
-  },
-];
+
 export const tweetList = [
   {
     id: 0,

@@ -155,6 +155,7 @@ export const heroData = [
     subtitle: "Beats Solo",
     title: "Wireless",
     title2: "Headphone",
+    link: "/shop",
   },
   {
     id: 2,
@@ -162,6 +163,7 @@ export const heroData = [
     subtitle: "Beats Solo",
     title: "DSLR Camera",
     title2: "Camera",
+    link: "/shop",
   },
   {
     id: 3,
@@ -169,8 +171,10 @@ export const heroData = [
     subtitle: "Beats Solo",
     title: "Wireless ",
     title2: "Earphones",
+    link: "/shop?category=Earphones",
   },
 ];
+
 export const categories = [
   ...new Set(products.map((product) => product.category)),
 ];

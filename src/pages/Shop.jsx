@@ -62,9 +62,9 @@ const Shop = () => {
       {/* left side  */}
       <div className="col-span-2 max-lg:order-2">
         {/* header */}
-        <div className="flex sm:flex-row flex-col-reverse items-start gap-3 sm:gap-0 sm:items-center justify-between mb-10">
+        <div className="mb-10 flex flex-col-reverse items-start justify-between gap-3 sm:flex-row sm:items-center sm:gap-0">
           <h3
-            className="font-medium text-lg tracking-wide"
+            className="text-lg font-medium tracking-wide"
             data-aos="fade-right"
           >
             Showing {indexOfFirstPro}-
@@ -79,13 +79,13 @@ const Shop = () => {
         </div>
 
         {/* show products */}
-        <div className="mb-10 grid gap-5 grid-cols-2 lg:grid-cols-3">
+        <div className="mb-10 grid grid-cols-2 gap-5 lg:grid-cols-3">
           {products.length !== 0 ? (
             addProductsDelay(sliceData(products)).map((pro) => (
               <ShopCards key={pro.id} {...pro} />
             ))
           ) : (
-            <div className="flex items-center my-5 justify-center col-span-full">
+            <div className="col-span-full my-5 flex items-center justify-center">
               <h3 className="text-2xl font-medium">No search results</h3>
             </div>
           )}

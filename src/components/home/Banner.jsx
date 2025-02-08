@@ -1,10 +1,10 @@
 const Banner = ({ data }) => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center pt-12">
+    <div className="flex min-h-[550px] items-center justify-center pt-12">
       <div className="container">
         <div
           style={{ backgroundColor: data.bgColor }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-white rounded-3xl"
+          className="grid grid-cols-1 items-center gap-6 rounded-3xl text-white md:grid-cols-3"
         >
           {/* first col */}
           <div className="p-6 sm:p-8">
@@ -13,7 +13,7 @@ const Banner = ({ data }) => {
             </p>
             <h1
               data-aos="zoom-out"
-              className="uppercase text-4xl lg:text-7xl font-bold"
+              className="text-4xl font-bold uppercase lg:text-7xl"
             >
               {data.title}
             </h1>
@@ -22,22 +22,22 @@ const Banner = ({ data }) => {
             </p>
           </div>
           {/* second col */}
-          <div data-aos="zoom-in" className="h-full flex items-center">
+          <div data-aos="zoom-in" className="flex h-full items-center">
             <img
               src={data.image}
-              alt=""
-              className="scale-125 w-[250px] md:w-[340px] mx-auto drop-shadow-[-10px_10px_12px_rgba(0,0,0,.6)] object-cover"
+              alt="product image"
+              className="mx-auto w-[250px] scale-125 object-cover drop-shadow-[-10px_10px_12px_rgba(0,0,0,.6)] md:w-[340px]"
             />
           </div>
           {/* third col */}
           <div className="flex flex-col justify-center gap-4 p-6 sm:p-8">
-            <p data-aos="zoom-out" className="font-bold text-xl">
+            <p data-aos="zoom-out" className="text-xl font-bold">
               {data.title2}
             </p>
-            <p data-aos="fade-up" className=" text-3xl sm:text-5xl font-bold">
+            <p data-aos="fade-up" className="text-3xl font-bold sm:text-5xl">
               {data.title3}
             </p>
-            <p data-aos="fade-up" className="text-sm tracking-wide leading-5">
+            <p data-aos="fade-up" className="text-sm leading-5 tracking-wide">
               {data.title4}
             </p>
           </div>

@@ -34,7 +34,7 @@ export default function Navbar() {
 
           <Link
             to="/cart-page"
-            className="p-3 transition-all hover:text-brandGreen"
+            className="pl-3 transition-all hover:text-brandGreen"
           >
             <FaCartShopping className="text-lg" />
           </Link>

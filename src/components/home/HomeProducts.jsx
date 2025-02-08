@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
-import { addProductsDelay } from "../../lib/utils";
+import { addProductsDelay, shuffleArray } from "../../lib/utils";
 import products from "../../products.json";
 import ShopCards from "../shop/ShopCards";
 
+const getRandomProducts = () => {
+  // Shuffle the array to ensure randomness
+  const shuffledData = shuffleArray(products);
+
+  const productsWithDelay = addProductsDelay(shuffledData);
+
+  // Select the first 8 products from the shuffled array
+  return productsWithDelay.slice(0, 8);
+};
+
 const HomeProducts = () => {
-  const getRandomProducts = () => {
-    // Shuffle the array to ensure randomness
-    const shuffledData = products.sort(() => Math.random() - 0.5);
-
-    const productsWithDelay = addProductsDelay(shuffledData);
-
-    // Select the first 12 items from the shuffled array
-    return productsWithDelay.slice(0, 8);
-  };
-
   const randomProducts = getRandomProducts();
 
   return (
     <div>
       <div className="mb-20 text-center">
         <h1 className="mb-5 text-3xl font-bold text-gray-950 max-md:mt-10 lg:text-5xl">
-          Our Products
+          Our New Products
         </h1>
       </div>
       <div className="container md:py-16">

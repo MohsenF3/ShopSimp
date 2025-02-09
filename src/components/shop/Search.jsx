@@ -1,15 +1,15 @@
 import { useRef } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useDebouncedCallback } from "use-debounce";
-import { useQueryParam } from "../../hooks/useQueryParam";
+import { useURLParams } from "../../hooks/useURLParams";
 
 export default function Search() {
-  const [name, setName] = useQueryParam("name");
+  const [searchQuery, setSearchQuery] = useURLParams("search", "");
   const inputRef = useRef(null);
 
   const handleSearch = useDebouncedCallback((term) => {
     let search = term.toLowerCase().trim();
-    setName(search);
+    setSearchQuery(search);
   }, 300);
 
   return (
@@ -23,13 +23,13 @@ export default function Search() {
       <input
         placeholder="search..."
         className={`input bg-brandYellow focus:w-64 peer-focus:w-64 peer-focus:border-brandYellow max-sm:w-full max-sm:!rounded-none max-sm:!border-b-[3px] max-sm:border-brandYellow max-sm:bg-transparent ${
-          name
+          searchQuery
             ? "!w-64 !rounded-none border-b-[3px] border-brandYellow bg-transparent"
             : ""
         }`}
         name="text"
         type="text"
-        defaultValue={name}
+        defaultValue={searchQuery}
         onChange={(e) => {
           handleSearch(e.target.value);
         }}

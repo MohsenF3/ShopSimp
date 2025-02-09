@@ -1,11 +1,14 @@
 import { categories } from "../../data/placeholder";
-import { useQueryParam } from "../../hooks/useQueryParam";
+import { useURLParams } from "../../hooks/useURLParams";
 
 const ShopCategory = () => {
-  let [category, setCategory] = useQueryParam("category");
-
+  const [selectedCategory, setSelectedCategory] = useURLParams(
+    "category",
+    "",
+    true,
+  );
   const handleClick = (category) => {
-    setCategory(category);
+    setSelectedCategory(category);
   };
 
   return (
@@ -15,7 +18,9 @@ const ShopCategory = () => {
         <li>
           <button
             className={`block w-full cursor-pointer whitespace-nowrap rounded-3xl px-4 py-2 text-center text-sm font-medium shadow-md transition-all duration-150 hover:scale-95 hover:shadow-none ${
-              !category ? "scale-95 bg-yellow-400 text-white" : "bg-slate-200"
+              selectedCategory
+                ? "bg-slate-200"
+                : "scale-95 bg-yellow-400 text-white"
             }`}
             onClick={() => handleClick("")}
           >
@@ -27,7 +32,7 @@ const ShopCategory = () => {
             <button
               onClick={() => handleClick(item)}
               className={`block w-full cursor-pointer whitespace-nowrap rounded-3xl px-4 py-2 text-center text-sm font-medium shadow-md transition-all duration-150 hover:scale-95 hover:shadow-none ${
-                item === category
+                item === selectedCategory
                   ? "scale-95 bg-yellow-400 text-white"
                   : "bg-slate-200"
               }`}

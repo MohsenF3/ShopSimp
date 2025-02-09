@@ -10,7 +10,7 @@ const ShopCards = ({ id, aosDelay, name, price, img, ratings }) => {
       data-aos-delay={aosDelay}
       className="group flex flex-col rounded-3xl border"
     >
-      <div className="relative min-h-[220px] overflow-hidden rounded-t-3xl border-b">
+      <div className="relative min-h-[300px] overflow-hidden rounded-t-3xl border-b lg:min-h-[220px]">
         <Image
           src={img}
           alt="Product Image"

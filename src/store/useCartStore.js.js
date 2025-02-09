@@ -24,18 +24,34 @@ export const useCartStore = create(
           }
         });
       },
+
+      incrementQuantity: (id) => {
+        set((state) => ({
+          cart: state.cart.map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+          ),
+        }));
+      },
+
+      decrementQuantity: (id) => {
+        set((state) => ({
+          cart: state.cart.map((item) =>
+            item.id === id && item.quantity > 1
+              ? { ...item, quantity: item.quantity - 1 }
+              : item,
+          ),
+        }));
+      },
+
       removeFromCart: (id) => {
         set((state) => ({
           cart: state.cart.filter((item) => item.id !== id),
         }));
       },
-      clearCart: () => {
-        set({ cart: [] });
-      },
     }),
     {
       name: "cart",
-      getStorage: () => localStorage,
+      getStorage: () => localStorage, // Persist cart in localStorage
     },
   ),
 );

@@ -10,7 +10,7 @@ const SLIDER_SETTING = {
   speed: 2500,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2500,
+  autoplaySpeed: 3500,
   cssEase: "linear",
   pauseOnHover: true,
   pauseOnFocus: true,

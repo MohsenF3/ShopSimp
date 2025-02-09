@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
-
 import Star from "../components/Star";
-
 import AddToCartForm from "../components/singleProduct/CartForm";
 import ProductImage from "../components/singleProduct/ProductImage";
 import SuggestedProducts from "../components/singleProduct/SuggestedProducts";
@@ -12,16 +10,17 @@ const SingleProductPage = () => {
   // get the id of product
   const { id } = useParams();
 
+  // check if id exits in url
   if (!id) {
     return <NotFound />;
   }
 
-  let product = getProductById(id);
+  const product = getProductById(id);
 
+  // check if product exists
   if (!product) {
     return <NotFound />;
   }
-
   const { name, price, img, ratings, seller, category } = product;
 
   return (

@@ -19,27 +19,27 @@ const CartItems = (props) => {
   return (
     <tr>
       {/* first td */}
-      <td className="p-5 border-b w-full md:w-auto">
+      <td className="w-full border-b p-5 md:w-auto">
         <Link
           to={`/shop/${product.id}`}
-          className="w-full group flex items-center gap-5"
+          className="group flex w-full items-center gap-5"
         >
-          <img src={product.img} alt="" className="rounded-3xl w-24" />
-          <h4 className=" group-hover:text-brandYellow font-medium max-sm:text-sm">
+          <img src={product.img} alt="" className="w-24 rounded-3xl" />
+          <h4 className="font-medium group-hover:text-brandYellow max-sm:text-sm">
             {product.name}
           </h4>
         </Link>
       </td>
       {/* second td */}
-      <td className="p-5 border-b font-medium hidden lg:table-cell text-center">
+      <td className="hidden border-b p-5 text-center font-medium lg:table-cell">
         <span>${product.price}</span>
       </td>
       {/* second td */}
-      <td className="p-5 border-b font-medium hidden lg:table-cell text-center">
+      <td className="hidden border-b p-5 text-center font-medium lg:table-cell">
         <span className="capitalize">{product.color}</span>
       </td>
       {/* third td */}
-      <td className="hidden md:table-cell border-b p-5">
+      <td className="hidden border-b p-5 md:table-cell">
         <div className="flex items-center justify-center gap-4">
           <button type="button" onClick={() => onDecrement(product.id)}>
             −
@@ -51,13 +51,13 @@ const CartItems = (props) => {
           </button>
         </div>
       </td>
-      <td className="p-5 border-b font-medium  text-center">
+      <td className="border-b p-5 text-center font-medium">
         $<span>{totalPrice(product)}</span>
       </td>
-      <td className="p-5 border-b">
+      <td className="border-b p-5">
         <a
           href="#"
-          className="hover:text-red-500 text-xl flex items-center justify-center"
+          className="flex items-center justify-center text-xl hover:text-red-500"
           onClick={() => onRemove(product.id)}
         >
           <MdDelete />

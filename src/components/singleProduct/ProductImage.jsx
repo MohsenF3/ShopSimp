@@ -32,7 +32,10 @@ function ProductImage({ imgUrl }) {
         width="100%"
         height="100%"
         alt="Product Image"
-        className="rounded-3xl h-full object-cover"
+        className="h-full rounded-3xl border object-cover"
+        onError={(e) => {
+          e.target.src = "/product-placeholder.webp";
+        }}
       />
 
       {showMagnifier && (
@@ -45,7 +48,7 @@ function ProductImage({ imgUrl }) {
           }}
         >
           <div
-            className="w-[210px] h-[210px] border-white border-2 rounded-3xl"
+            className="h-[210px] w-[210px] rounded-3xl border-2 border-white"
             style={{
               backgroundImage: `url(${imgUrl})`,
               backgroundPosition: `${position.x}% ${position.y}%`,

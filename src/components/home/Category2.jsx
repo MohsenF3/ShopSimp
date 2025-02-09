@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Image2 from "/images/category/bottle.png";
-import Image1 from "/images/category/cap.png";
-import Image3 from "/images/category/headphone.png";
+import Image2 from "/images/category/bottle.webp";
+import Image1 from "/images/category/cap.webp";
+import Image3 from "/images/category/headphone.webp";
 
 const Category2 = () => {
   return (

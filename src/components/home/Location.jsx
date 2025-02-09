@@ -1,4 +1,4 @@
-import MapImage from "/images/shape-img/01.png";
+import MapImage from "/images/shape-img/01.webp";
 
 const Location = () => {
   return (

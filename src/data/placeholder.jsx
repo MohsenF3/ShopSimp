@@ -19,19 +19,19 @@ export const navItems = [
 export const aboutList = [
   {
     id: 0,
-    imgUrl: "/images/about/icon/01.jpg",
+    imgUrl: "/images/about/icon/01.webp",
     title: "Skilled Instructors",
     desc: "Distinctively provide acces mutfuncto users whereas communicate leveraged services",
   },
   {
     id: 1,
-    imgUrl: "/images/about/icon/02.jpg",
+    imgUrl: "/images/about/icon/02.webp",
     title: "Get Certificate",
     desc: "Distinctively provide acces mutfuncto users whereas communicate leveraged services",
   },
   {
     id: 2,
-    imgUrl: "/images/about/icon/03.jpg",
+    imgUrl: "/images/about/icon/03.webp",
     title: "Online Classes",
     desc: "Distinctively provide acces mutfuncto users whereas communicate leveraged services",
   },
@@ -61,25 +61,25 @@ export const social = [
 export const postList = [
   {
     id: 1,
-    imgUrl: "/images/blog/10.jpg",
+    imgUrl: "/images/blog/10.webp",
     title: "Poor People Campaign Our Resources",
     date: "Jun 05,2022",
   },
   {
     id: 2,
-    imgUrl: "/images/blog/11.jpg",
+    imgUrl: "/images/blog/11.webp",
     title: "Poor Peoples Campaign Our Resources",
     date: "Jun 05,2022",
   },
   {
     id: 3,
-    imgUrl: "/images/blog/12.jpg",
+    imgUrl: "/images/blog/12.webp",
     title: "Poor Peoples Campaign Our Resources",
     date: "Jun 05,2022",
   },
   {
     id: 4,
-    imgUrl: "/images/blog/09.jpg",
+    imgUrl: "/images/blog/09.webp",
     title: "Poor Peoples Campaign Our Resources",
     date: "Jun 05,2022",
   },
@@ -128,7 +128,7 @@ export const BannerData = {
   discount: "30% OFF",
   title: "Fine Smile",
   date: "10 Jan to 28 Jan",
-  image: "/images/category/headphone.png",
+  image: "/images/category/headphone.webp",
   title2: "Air Solo Bass",
   title3: "Winter Sale",
   title4:
@@ -140,7 +140,7 @@ export const BannerData2 = {
   discount: "30% OFF",
   title: "Happy SOUNDS",
   date: "14 Jan to 28 Jan",
-  image: "/images/category/earbuds.png",
+  image: "/images/category/earbuds.webp",
   title2: "Smart Earbuds",
   title3: "Winter Sale",
   title4:
@@ -151,7 +151,7 @@ export const BannerData2 = {
 export const heroData = [
   {
     id: 1,
-    img: "/images/category/headphone.png",
+    img: "/images/category/headphone.webp",
     subtitle: "Beats Solo",
     title: "Wireless",
     title2: "Headphone",
@@ -159,7 +159,7 @@ export const heroData = [
   },
   {
     id: 2,
-    img: "/images/category/camera.png",
+    img: "/images/category/camera.webp",
     subtitle: "Beats Solo",
     title: "DSLR Camera",
     title2: "Camera",
@@ -167,7 +167,7 @@ export const heroData = [
   },
   {
     id: 3,
-    img: "/images/category/earbuds.png",
+    img: "/images/category/earbuds.webp",
     subtitle: "Beats Solo",
     title: "Wireless ",
     title2: "Earphones",

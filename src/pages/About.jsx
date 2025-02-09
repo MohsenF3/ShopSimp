@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import Image from "../components/Image";
 import { aboutList } from "../data/placeholder";
-import img1 from "/images/about/01.jpg";
-import img2 from "/images/about/02.jpg";
+import img1 from "/images/about/01.webp";
+import img2 from "/images/about/02.webp";
 
 const About = () => {
   const aboutItems = useMemo(

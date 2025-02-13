@@ -15,7 +15,7 @@ const About = () => {
   );
 
   return (
-    <div className="container min-h-screen overflow-hidden pt-3 max-lg:mb-10">
+    <div className="container min-h-[80vh] overflow-hidden pt-3 max-lg:mb-10">
       <div className="flex flex-col gap-10 lg:flex-row">
         {/* Left: Images */}
         <AboutImages />
@@ -38,7 +38,7 @@ export default About;
 
 const AboutHeader = () => (
   <div className="mb-10">
-    <h3 className="text-xl font-medium tracking-widest text-red-500">
+    <h3 className="text-xl font-medium tracking-widest text-primary">
       About Our Brand
     </h3>
     <h1 className="my-3 text-3xl font-bold">

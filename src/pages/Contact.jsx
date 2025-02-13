@@ -3,7 +3,7 @@ import Map from "../components/contact/Map";
 
 const Contact = () => {
   return (
-    <div className="container flex h-[calc(100vh-6rem)] items-center md:mb-10 md:items-stretch">
+    <div className="container flex h-[60vh] md:mb-10 lg:h-[80vh]">
       <div className="flex-1">
         <div className="max-w-md">
           <div className="mb-10">

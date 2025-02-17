@@ -3,9 +3,9 @@ import Map from "../components/contact/Map";
 
 const Contact = () => {
   return (
-    <div className="container flex h-[60vh] md:mb-10 lg:h-[80vh]">
+    <div className="container flex h-[80vh] md:mb-10">
       <div className="flex-1">
-        <div className="max-w-md">
+        <div className="max-w-full md:max-w-md">
           <div className="mb-10">
             <h3
               data-aos="fade-right"

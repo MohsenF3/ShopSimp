@@ -22,7 +22,7 @@ const HomeProducts = () => {
         </h1>
       </div>
       <div className="container md:py-16">
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {randomProducts.map((product, index) => (
             <ShopCards key={product.id} index={index} {...product} />
           ))}

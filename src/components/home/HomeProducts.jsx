@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { addProductsDelay, shuffleArray } from "../../lib/utils";
+import { shuffleArray } from "../../lib/utils";
 import products from "../../products.json";
 import ShopCards from "../shop/ShopCards";
 
@@ -7,10 +7,8 @@ const getRandomProducts = () => {
   // Shuffle the array to ensure randomness
   const shuffledData = shuffleArray(products);
 
-  const productsWithDelay = addProductsDelay(shuffledData);
-
   // Select the first 8 products from the shuffled array
-  return productsWithDelay.slice(0, 8);
+  return shuffledData.slice(0, 8);
 };
 
 const HomeProducts = () => {
@@ -25,8 +23,8 @@ const HomeProducts = () => {
       </div>
       <div className="container md:py-16">
         <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
-          {randomProducts.map((pro) => (
-            <ShopCards key={pro.id} {...pro} />
+          {randomProducts.map((product, index) => (
+            <ShopCards key={product.id} index={index} {...product} />
           ))}
         </div>
       </div>

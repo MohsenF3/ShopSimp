@@ -1,20 +1,35 @@
+import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Image({ src, height, width, alt, ...rest }) {
+  const placeholderRef = useRef(null);
+
+  const onLoad = () => {
+    placeholderRef.current.style.display = "none";
+  };
+
   return (
-    <LazyLoadImage
-      alt={alt}
-      height={height}
-      src={src}
-      effect="blur"
-      wrapperProps={{
-        // If you need to, you can tweak the effect transition using the wrapper style.
-        style: { overflow: "hidden", transitionDelay: 0.5 },
-      }}
-      width={width}
-      {...rest}
-    />
+    <>
+      <div
+        ref={placeholderRef}
+        style={{ width, height }}
+        className="bg-gray-100"
+      />
+
+      <LazyLoadImage
+        alt={alt}
+        height={height}
+        src={src}
+        effect="blur"
+        wrapperProps={{
+          style: { overflow: "hidden", transitionDelay: 0.5 },
+        }}
+        width={width}
+        onLoad={onLoad}
+        {...rest}
+      />
+    </>
   );
 }
 

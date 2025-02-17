@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 import Image from "../Image";
 import Star from "../Star";
 
-const ShopCards = ({ id, aosDelay, name, price, img, ratings }) => {
+const ShopCards = ({ id, index, name, price, img, ratings }) => {
   return (
     <div
-      data-aos={aosDelay && "fade-up"}
-      data-aos-delay={aosDelay}
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
       className="group flex flex-col rounded-3xl border"
     >
       <div className="relative min-h-[300px] overflow-hidden rounded-t-3xl border-b lg:min-h-[220px]">
         <Image
           src={img}
-          alt="Product Image"
+          alt={name}
           width="100%"
           height={275}
           className="h-full w-full rounded-t-3xl object-cover !transition-all duration-300 ease-in-out group-hover:-rotate-6 group-hover:scale-125"

@@ -3,7 +3,6 @@ import Search from "../components/shop/Search";
 import ShopCards from "../components/shop/ShopCards";
 import ShopCategory from "../components/shop/ShopCategory";
 import { useURLParams } from "../hooks/useURLParams";
-import { addProductsDelay } from "../lib/utils";
 import products from "../products.json";
 
 const Pagination = lazy(() => import("../components/shop/Pagination"));
@@ -72,8 +71,8 @@ const ShopProductGrid = ({ products }) => {
   return (
     <div className="mb-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {products.length !== 0 ? (
-        addProductsDelay(products).map((pro) => (
-          <ShopCards key={pro.id} {...pro} />
+        products.map((product, index) => (
+          <ShopCards key={product.id} index={index} {...product} />
         ))
       ) : (
         <div className="col-span-full my-5 flex items-center justify-center">
